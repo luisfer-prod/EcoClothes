@@ -1,0 +1,26 @@
+<div class="contenedor">
+
+  <h1 class="titulo">RELLENE EL FORMULARIO DE REGISTRO</h1>
+
+  <h4>Introduce un nickname</h4>
+  <div class="caja">
+    <mat-form-field  action="registro.php" method="post">
+      <input matInput type="text" name="nombre" [(ngModel)]="cliente.nombre" placeholder="Ingrese un nombre" ngModel required>
+    </mat-form-field>
+  </div>
+  <h4>Introduce un correo</h4>
+  <div class="caja">
+    <mat-form-field action="registro.php" method="post">
+      <input matInput type="text" name="correo" [(ngModel)]="cliente.correo" placeholder="Ingrese un correo" ngModel required>
+    </mat-form-field>
+  </div>
+  <h4>Introduce una contraseña</h4>
+  <div class="caja">
+    <mat-form-field action="registro.php" method="post">
+      <input matInput  type="text" name="password" [(ngModel)]="cliente.password" placeholder="Ingrese contraseña" ngModel required>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="registro()" routerLink="">Registrar</button>
+
+</div>

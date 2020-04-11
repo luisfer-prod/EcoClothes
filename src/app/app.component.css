@@ -1,0 +1,18 @@
+body {
+/*
+  display: flex;
+  justify-content: center; */
+  background-image: url('src/assets/fondo.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+ app-navegador {
+
+  position: sticky;
+  margin-top: 10px;
+
+}

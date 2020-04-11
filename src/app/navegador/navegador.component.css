@@ -1,0 +1,19 @@
+
+.navegador{
+  background-color: greenyellow;
+  display:flex;
+  justify-content: space-around;
+  border-radius: 137px 137px 137px 137px;
+  width: 65em;
+  margin-left: 36px;
+}
+
+.fondo_titulo img{
+  width: 50px;
+  margin-top: 8px;
+}
+
+.boton img{
+
+  width: 30px;
+}

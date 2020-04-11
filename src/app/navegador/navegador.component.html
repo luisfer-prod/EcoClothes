@@ -1,0 +1,18 @@
+<div class="navegador">
+
+<button mat-button [matMenuTriggerFor]="menu" class="boton" ><img src="assets/barras.png" alt="barras"></button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Quienes somos</button>
+  <button mat-menu-item>Medio ambiente</button>
+  <button mat-menu-item>Catálogo</button>
+</mat-menu>
+
+<a class="fondo_titulo" routerLink="">
+  <img src="assets/logo_alpha.png" alt="">
+</a>
+
+
+<app-login></app-login>
+
+</div>

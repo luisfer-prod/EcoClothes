@@ -1,0 +1,29 @@
+.contenedor {
+  background-color: aliceblue;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  margin:1rem auto;
+  max-width: 600px;
+  border-radius: 15% 15% 15% 15%;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: black;
+}
+
+input.mat-input-element {
+  color: green;
+}
+
+.caja{
+  border-style: solid;
+  border-color: black;
+  margin: 5px;
+}
+
+.titulo{
+
+  margin-left: 80px;
+  margin-bottom: 30px;
+}

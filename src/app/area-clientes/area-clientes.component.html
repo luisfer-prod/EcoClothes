@@ -1,0 +1,49 @@
+<div class="fondo">
+  <h1>Administración de artículos</h1>
+    <table border="1" *ngIf="hayRegistros(); else sinarticulos">
+      <tr>
+        <td>Nombre</td><td>Imagen</td><td>Precio</td><td>Descuento</td><td>Borrar</td><td>Seleccionar</td>
+      </tr>
+      <tr *ngFor="let art of articulos">
+        <td>{{art.nombre}}</td>
+        <td><img src='assets/{{art.imagen}}'></td>
+        <td>{{art.precio}}</td>
+        <td>{{art.descuento}}</td>
+        <td><button (click)="baja(art.codigo)">Borrar</button></td>
+        <td><button (click)="seleccionar(art.codigo)">Seleccionar</button></td>
+      </tr>
+    </table>
+    <ng-template #sinarticulos><p>No hay articulos.</p></ng-template>
+    <div class="formulario">
+      <p>
+        Nombre:<input type="text" [(ngModel)]="art.nombre" />
+      </p>
+      <p>
+        Imagen:<input type="text" [(ngModel)]="art.imagen" />
+      </p>
+      <p>
+        Precio:<input type="number" [(ngModel)]="art.precio" />
+      </p>
+      <p>
+        Descuento:<input type="number" [(ngModel)]="art.descuento" />
+      </p>
+      <p><button (click)="alta()">Agregar</button>
+      <button (click)="modificacion()">Modificar</button></p>
+    </div>
+</div>
+
+
+<!-- <script>
+  var segundos = 60;
+  function contar(){
+    if(segundos <= 0){
+      document.getElementById("contador").innerHTML = "Redireccionando ...";
+      //document.location = "/salir.php";
+    } else {
+      segundos--;
+      document.getElementById("contador").innerHTML = "Le redireccionaremos automáticamente en " + segundos + " segundos.";
+    }
+  }
+  setInterval("contar()",1000);
+  </script>
+  <div id="contador">Le redireccionaremos automáticamente en 60 segundos</div> -->
