@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, HostListener  } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-formulario',
@@ -9,6 +11,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
+
 
     codigo = null;
 
@@ -25,11 +28,20 @@ export class FormularioComponent implements OnInit {
     }
 
 
+
+    // @HostListener('click')
+    // click() {
+    //   this.login.esconder();
+    // };
+
+
+
     constructor(
       private productosServicio: ProductosService,
       private location: Location,
       private router: Router
     ) { }
+
 
     ngOnInit(): void {
         this.recuperarClientes();
@@ -42,13 +54,12 @@ export class FormularioComponent implements OnInit {
     registrarCodigo(){
       this.productosServicio.registrarCodigo(this.codigo).subscribe(datos => {
         if (datos['resultado']=='OK') {
-          alert(datos['mensaje']);
+         // alert(datos['mensaje']);
         }
-      });;
+      });
     }
 
     acceso() {
-
 
         this.recuperarClientes();
 
@@ -63,12 +74,11 @@ export class FormularioComponent implements OnInit {
 
         });
 
-
         if (!this.flag) {
             alert("El usuario introducido no existe. Revise si los datos son erroneos");
         } else{
           this.registrarCodigo();
-        //  this.router.navigate(['/areaCliente']);
+          this.router.navigate(['/areaCliente']);
         }
     }
 

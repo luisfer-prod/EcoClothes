@@ -5,3 +5,8 @@ button {
 .iniciar{
   margin-right:1em;
 }
+
+.cerrar{
+  display: none;
+  visibility: hidden;
+}

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, HostListener  } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { Router } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
+
 
 @Component({
   selector: 'app-area-clientes',
@@ -8,6 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./area-clientes.component.css']
 })
 export class AreaClientesComponent implements OnInit {
+
+
+
+  @Input() login: LoginComponent;
 
 
   articulos=null;
@@ -35,8 +41,6 @@ export class AreaClientesComponent implements OnInit {
 
   }
 
-
-
   sesion(){
 
     this.productosServicio.sesion();
@@ -44,15 +48,20 @@ export class AreaClientesComponent implements OnInit {
     this.autoSaveInterval = setInterval( ()=>{
       this.contador++;
       console.log(this.contador);
-      if (this.contador>60) {
+      if (this.contador>3600) {
         this.router.navigate(['']);
         alert('Llevas demasiado tiempo inactivo.Cerrando sesion');
         this.productosServicio.cerrarSesion();
         clearInterval(this.autoSaveInterval);
       };
     },1000);
+  }
+
+  cerrarSesion(){
 
   }
+
+
 
   recuperarTodos() {
     this.productosServicio.recuperarTodos().subscribe(result => this.articulos = result);
@@ -92,5 +101,7 @@ export class AreaClientesComponent implements OnInit {
   hayRegistros() {
     return true;
   }
+
+
 
 }
