@@ -2,6 +2,15 @@
 
 <button mat-button [matMenuTriggerFor]="menu" class="boton" ><img src="assets/barras.png" alt="barras"></button>
 
+
+  <img class='usuario' id='usuario' src="../../assets/usuario.png" alt="">
+
+  <h2 id='hola'>Bienvenido {{nombre.nombre}}</h2>
+
+
+
+
+
 <mat-menu #menu="matMenu">
   <button mat-menu-item>Quienes somos</button>
   <button mat-menu-item>Medio ambiente</button>
@@ -13,6 +22,6 @@
 </a>
 
 
-<app-login id="login"></app-login>
+<app-login></app-login>
 
 </div>

@@ -50,5 +50,12 @@ export class ProductosService {
     registrarCodigo(codigo:number){
       return this.http.get(`${this.url}registrarCodigo.php?codigo='${codigo}'`);
     }
+    borrarUltimo(){
+      return this.http.get(`${this.url}borrarUltimo.php`);
+    }
+
+    extraerNombre(){
+      return this.http.get(`${this.url}extraerNombre.php`);
+    }
 }
 

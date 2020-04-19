@@ -1,5 +1,7 @@
 import { Component, OnInit,Input, HostListener } from '@angular/core';
 import { FormularioComponent } from '../formulario/formulario.component';
+import { ProductosService } from '../productos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +10,16 @@ import { FormularioComponent } from '../formulario/formulario.component';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private productosServicio: ProductosService
+  ) { }
+
 
   ngOnInit(): void {
+
   }
+
 
   // @Input() formulario: FormularioComponent;
 
@@ -20,19 +28,43 @@ export class LoginComponent implements OnInit {
   //   this.esconder();
   // }
 
-  esconder(){
-    let iniciar = document.getElementById('iniciar');
-    let registrar = document.getElementById('registrar');
-    let cerrar = document.getElementById('cerrar');
+   cerrarSesion(){
+    this.restaurarBotones();
+    this.borrarUltimo();
+    this.router.navigate(['']);
+   }
 
-    iniciar.style.display='none';
-    iniciar.style.visibility='hidden';
+   borrarUltimo(){
+    this.productosServicio.borrarUltimo().subscribe(datos => {
+      if (datos['resultado']=='OK') {
+       // alert(datos['mensaje']);
+      }
+    });
+   }
 
-    registrar.style.display='none';
-    registrar.style.visibility='hidden';
+   restaurarBotones(){
 
-    cerrar.style.display='inline';
-    cerrar.style.visibility='visible';
+    var  iniciar = document.getElementById('iniciar');
+    var registrar = document.getElementById('registrar');
+    var cerrar = document.getElementById('cerrar');
+    var hola = document.getElementById('hola');
+    var usuario = document.getElementById('usuario');
+
+    iniciar.style.display='inline';
+    iniciar.style.visibility='visible';
+
+    registrar.style.display='inline';
+    registrar.style.visibility='visible';
+
+    cerrar.style.display='none';
+    cerrar.style.visibility='hidden';
+
+    hola.style.display='none';
+    hola.style.visibility='hidden';
+
+    usuario.style.display='none';
+    usuario.style.visibility='hidden';
   }
+
 
 }

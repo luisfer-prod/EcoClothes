@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormularioComponent } from './formulario/formulario.component';
 import { RegistroComponent } from './registro/registro.component';
 import { AreaClientesComponent } from './area-clientes/area-clientes.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [{
   path:'formulario',
@@ -16,6 +17,10 @@ const routes: Routes = [{
 {
   path:'areaCliente',
   component:AreaClientesComponent
+},
+{
+  path:'app',
+  component:AppComponent
 }
 ];
 

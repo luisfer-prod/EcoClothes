@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, HostListener  } from '@angular/core';
+import { Component, OnInit,Input, HostListener } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
@@ -13,7 +13,7 @@ export class AreaClientesComponent implements OnInit {
 
 
 
-  @Input() login: LoginComponent;
+  // @Input() login: LoginComponent;
 
 
   articulos=null;
@@ -32,13 +32,43 @@ export class AreaClientesComponent implements OnInit {
   private contador : number = 0;
 
 
-  constructor(private productosServicio: ProductosService,
+  constructor(
+    private productosServicio: ProductosService,
     private router: Router) {}
 
   ngOnInit() {
     this.recuperarTodos();
     this.sesion();
+    this.aparecer();
+    this.esconder();
+  }
 
+  aparecer(){
+   var hola = document.getElementById('hola');
+   var usuario = document.getElementById('usuario');
+
+   hola.style.display='inline';
+   hola.style.visibility='visible';
+
+   usuario.style.display='inline';
+   usuario.style.visibility='visible';
+  }
+
+  esconder(){
+
+    var iniciar = document.getElementById('iniciar');
+    var registrar = document.getElementById('registrar');
+    var cerrar = document.getElementById('cerrar');
+
+
+    iniciar.style.display='none';
+    iniciar.style.visibility='hidden';
+
+    registrar.style.display='none';
+    registrar.style.visibility='hidden';
+
+    cerrar.style.display='inline';
+    cerrar.style.visibility='visible';
   }
 
   sesion(){
@@ -56,11 +86,6 @@ export class AreaClientesComponent implements OnInit {
       };
     },1000);
   }
-
-  cerrarSesion(){
-
-  }
-
 
 
   recuperarTodos() {
