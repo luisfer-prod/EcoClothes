@@ -1,6 +1,8 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { ProductosService } from '../productos.service';
+import { Observable } from "rxjs/internal/Observable";
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-navegador',
@@ -10,21 +12,24 @@ import { ProductosService } from '../productos.service';
 export class NavegadorComponent implements OnInit {
 
   constructor(
-    private productosServicio: ProductosService
+    private productosServicio: ProductosService,
   ) { }
 
-  nombre=null;
+
 
   @Input() login: LoginComponent;
 
+  nombre;
+
   ngOnInit(): void {
-    this.extraerNombre();
+
+    this.nombre = interval(50).subscribe(() => this.productosServicio.extraerNombre().subscribe(result => this.nombre=result));
     this.esconderSesionInicio();
   }
 
-  extraerNombre(){
-    this.productosServicio.extraerNombre().subscribe(result => this.nombre = result);
-  }
+  // extraerNombre(){
+  //   this.productosServicio.extraerNombre().subscribe(result => this.nombre=result);
+  //  }
 
   esconderSesionInicio(){
 

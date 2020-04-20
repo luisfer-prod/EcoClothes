@@ -2,6 +2,7 @@ import { Component, OnInit,Input, HostListener  } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { NavegadorComponent } from '../navegador/navegador.component';
 
 
 
@@ -26,7 +27,6 @@ export class FormularioComponent implements OnInit {
       identidad:null,
       password:null
     }
-
 
 
     // @HostListener('click')

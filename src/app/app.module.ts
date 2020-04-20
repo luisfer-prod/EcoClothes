@@ -20,6 +20,7 @@ import { NavegadorComponent } from './navegador/navegador.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { AreaClientesComponent } from './area-clientes/area-clientes.component';
+import { QuieneSomosComponent } from './quiene-somos/quiene-somos.component';
 
 
 
@@ -30,7 +31,8 @@ import { AreaClientesComponent } from './area-clientes/area-clientes.component';
     NavegadorComponent,
     LoginComponent,
     RegistroComponent,
-    AreaClientesComponent
+    AreaClientesComponent,
+    QuieneSomosComponent
   ],
   imports: [
     BrowserModule,
