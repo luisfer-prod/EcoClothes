@@ -21,6 +21,8 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { AreaClientesComponent } from './area-clientes/area-clientes.component';
 import { QuieneSomosComponent } from './quiene-somos/quiene-somos.component';
+import { MedioAmbienteComponent } from './medio-ambiente/medio-ambiente.component';
+import { PrincipalComponent } from './principal/principal.component';
 
 
 
@@ -32,7 +34,9 @@ import { QuieneSomosComponent } from './quiene-somos/quiene-somos.component';
     LoginComponent,
     RegistroComponent,
     AreaClientesComponent,
-    QuieneSomosComponent
+    QuieneSomosComponent,
+    MedioAmbienteComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,

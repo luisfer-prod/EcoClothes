@@ -6,6 +6,8 @@ import { RegistroComponent } from './registro/registro.component';
 import { AreaClientesComponent } from './area-clientes/area-clientes.component';
 import { QuieneSomosComponent } from './quiene-somos/quiene-somos.component';
 import { AppComponent } from './app.component';
+import { MedioAmbienteComponent } from './medio-ambiente/medio-ambiente.component';
+import { PrincipalComponent } from './principal/principal.component';
 
 const routes: Routes = [{
   path:'formulario',
@@ -26,6 +28,14 @@ const routes: Routes = [{
 {
   path:'quieneSomos',
   component:QuieneSomosComponent
+},
+{
+  path:'medioAmbiente',
+  component:MedioAmbienteComponent
+},
+{
+  path:'',
+  component:PrincipalComponent
 }
 ];
 

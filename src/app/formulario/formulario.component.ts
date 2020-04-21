@@ -3,6 +3,7 @@ import { ProductosService } from '../productos.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { NavegadorComponent } from '../navegador/navegador.component';
+import swal from 'sweetalert';
 
 
 
@@ -75,7 +76,7 @@ export class FormularioComponent implements OnInit {
         });
 
         if (!this.flag) {
-            alert("El usuario introducido no existe. Revise si los datos son erroneos");
+            swal("El usuario introducido no existe. Revise si los datos son erroneos");
         } else{
           this.registrarCodigo();
           this.router.navigate(['/areaCliente']);

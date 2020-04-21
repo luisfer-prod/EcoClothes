@@ -2,6 +2,7 @@ import { Component, OnInit,Input, HostListener } from '@angular/core';
 import { FormularioComponent } from '../formulario/formulario.component';
 import { ProductosService } from '../productos.service';
 import { Router } from '@angular/router';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-login',

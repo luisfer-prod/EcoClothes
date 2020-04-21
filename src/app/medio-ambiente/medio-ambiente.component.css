@@ -1,0 +1,88 @@
+.container {
+  border: 1px;
+  padding: 20px;
+  margin: 20px;
+  width: 80%;
+  height: 600px;
+  margin-left: 5rem;
+  border-radius: 5%;
+}
+
+.text {
+  width: 20px;
+  height: 100px;
+  background-color: transparent;
+  padding: 10px;
+  color: white;
+  position: absolute;
+  z-index: 1;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.container .text .hache1{
+  margin-top: -60px;
+  text-indent: 3em;
+  height: 20%;
+  width: 10%;
+}
+
+.background {
+
+  width: 98%;
+  height: 400px;
+  background-color: green;
+  padding: 10px;
+  margin: 0px 0px 10px 0px;
+  border-radius: 5%;
+  opacity: 0.5;
+}
+
+.trans {
+  opacity: 0.5;
+}
+
+span{
+  margin-left:290px;
+}
+
+.ecoLabel{
+  margin-top: 200px;
+  margin-left: 180px;
+  width: 100px;
+  position: absolute;
+  z-index: 1;
+}
+
+.greenpeace{
+  width: 260px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 200px;
+  margin-left: 400px;
+  border-radius: 5%;
+}
+
+.tabla{
+  margin-top: -140px;
+}
+
+.iberdrola{
+  width: 150px;
+  position: absolute;
+  z-index: 1;
+  border-radius: 8%;
+  margin-top: 320px;
+  margin-left: 180px;
+}
+
+.energy{
+  width: 150px;
+  position: absolute;
+  z-index: 1;
+  border-radius: 8%;
+  margin-top: 320px;
+  margin-left: 470px;
+}
