@@ -57,5 +57,17 @@ export class ProductosService {
     extraerNombre(){
       return this.http.get(`${this.url}extraerNombre.php`);
     }
+
+    anadirCarro(){
+      return this.http.get(`${this.url}anadirCarro.php`);
+    }
+
+    codigoCliente(){
+      return this.http.get(`${this.url}codigoCliente.php`);
+    }
+
+    pedidoEspecifico(codigoPedido,codigoArticulo){
+      return this.http.get(`${this.url}pedidoEspecifico.php?codigo='${codigoPedido}'&articulo='${codigoArticulo}'`);
+    }
 }
 

@@ -6,21 +6,22 @@
 <div class="fondo">
   <h1>Administración de artículos</h1>
 
-    <table border="1" *ngIf="hayRegistros(); else sinarticulos">
-      <tr>
-        <td>Nombre</td><td>Imagen</td><td>Precio</td><td>Descuento</td><td>Borrar</td><td>Seleccionar</td>
+    <table class="table table-warning table-bordered" border="1" *ngIf="hayRegistros(); else sinarticulos">
+      <tr scope="row">
+        <td>Nombre</td><td>Imagen</td><td>Precio</td><td>Descuento</td><td>Añadir</td><!--<td>Seleccionar</td>-->
       </tr>
-      <tr *ngFor="let art of articulos">
-        <td>{{art.nombre}}</td>
+      <tr scope="row" *ngFor="let art of articulos">
+        <td scope="col">{{art.nombre}}</td>
         <td><img src='assets/{{art.imagen}}'></td>
-        <td>{{art.precio}}</td>
+        <td scope="col">{{art.precio}}</td>
         <td>{{art.descuento}}</td>
-        <td><button (click)="baja(art.codigo)">Borrar</button></td>
-        <td><button (click)="seleccionar(art.codigo)">Seleccionar</button></td>
+        <td scope="col"><button (click)="carrito(art.codigo)" (click)="anadirCarro(art.codigo)">Añadir al carrito</button></td>
+        <!-- <td><button (click)="seleccionar(art.codigo)">Seleccionar</button></td> -->
       </tr>
     </table>
+
     <ng-template #sinarticulos><p>No hay articulos.</p></ng-template>
-    <div class="formulario">
+    <!-- <div class="formulario">
       <p>
         Nombre:<input type="text" [(ngModel)]="art.nombre" />
       </p>
@@ -35,23 +36,27 @@
       </p>
       <p><button (click)="alta()">Agregar</button>
       <button (click)="modificacion()">Modificar</button></p>
-    </div>
+    </div> -->
 </div>
 
 
+<div class="contenedor">
+
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Cras justo odio
+        <span class="badge badge-primary badge-pill">14</span>
+      </li>
+    </ul>
+
+    <ng-template #sinpedido><p>No hay articulos.</p></ng-template>
+
+    <div class="columna">
+      <img src="../assets/carrito.png" alt="" class="carro">
+      <br><br>
+      <h1> <strong>HAY {{total}} PRODUCTOS </strong> </h1>
+    </div>
+
+</div>
 
 
-<!-- <script>
-  var segundos = 60;
-  function contar(){
-    if(segundos <= 0){
-      document.getElementById("contador").innerHTML = "Redireccionando ...";
-      //document.location = "/salir.php";
-    } else {
-      segundos--;
-      document.getElementById("contador").innerHTML = "Le redireccionaremos automáticamente en " + segundos + " segundos.";
-    }
-  }
-  setInterval("contar()",1000);
-  </script>
-  <div id="contador">Le redireccionaremos automáticamente en 60 segundos</div> -->

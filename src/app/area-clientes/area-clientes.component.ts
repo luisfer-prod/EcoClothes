@@ -11,14 +11,16 @@ import { LoginComponent } from '../login/login.component';
 })
 export class AreaClientesComponent implements OnInit {
 
-
-
   // @Input() login: LoginComponent;
 
-
   articulos=null;
-
   prueba=null;
+  total=0;
+  autoSaveInterval;
+  contador : number = 0;
+  pedidos=null;
+  pedidoUnico=null;
+  codigoCli;
 
   art={
     codigo:null,
@@ -28,19 +30,48 @@ export class AreaClientesComponent implements OnInit {
     descuento:null
   }
 
-  private autoSaveInterval;
-  private contador : number = 0;
-
 
   constructor(
     private productosServicio: ProductosService,
     private router: Router) {}
+
+
 
   ngOnInit() {
     this.recuperarTodos();
     this.sesion();
     this.aparecer();
     this.esconder();
+  }
+
+  anadirCarro(codigoArticulo){
+
+    var flag=false;
+
+    this.productosServicio.anadirCarro().subscribe(result => this.pedidos = result);
+    this.codigoCliente();
+
+    this.pedidos.forEach(element => {
+      if (element.codigo_cliente==this.codigoCli) {
+        var codigoPedido = element.codigo_pedido;
+        this.insertarPedidoExistente(codigoPedido,codigoArticulo);
+      } else {
+
+      }
+    });
+  }
+
+  insertarPedidoExistente(codigoPedido,codigoArticulo){
+    this.productosServicio.pedidoEspecifico(codigoPedido,codigoArticulo).subscribe(result => this.pedidoUnico = result);
+
+  }
+
+  codigoCliente(){
+    this.productosServicio.codigoCliente().subscribe(result => this.codigoCli = result);
+  }
+
+  carrito(codigo){
+    this.total++;
   }
 
   aparecer(){
@@ -126,7 +157,5 @@ export class AreaClientesComponent implements OnInit {
   hayRegistros() {
     return true;
   }
-
-
 
 }
