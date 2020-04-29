@@ -1,6 +1,6 @@
 
 .contenedor {
-  background-color: aliceblue;
+  background-color: burlywood;
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -13,9 +13,9 @@
   color: black;
 }
 
-input.mat-input-element {
+/* input.mat-input-element {
   color: green;
-}
+} */
 
 .caja{
   border-style: solid;

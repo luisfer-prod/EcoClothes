@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { NavegadorComponent } from '../navegador/navegador.component';
 import swal from 'sweetalert';
-
+import * as Cookies from 'js-cookie';
 
 
 @Component({
@@ -15,17 +15,20 @@ import swal from 'sweetalert';
 export class FormularioComponent implements OnInit {
 
 
+  casa = 'casa';
+
     codigo = null;
 
     clientes = null;
 
     flag = false;
 
-    cookie = null;
+    cookieIdentidad = Cookies.get('identidad');
+    cookiePassword = Cookies.get('password');
 
     cliente={
       codigo:null,
-      identidad:null,
+      identidad:Cookies.get('identidad'),
       password:null
     }
 
@@ -44,13 +47,8 @@ export class FormularioComponent implements OnInit {
     ) { }
 
 
-    ngOnInit(): void {
+    ngOnInit() {
         this.recuperarClientes();
-        this.recuperarCookie();
-    }
-
-    recuperarCookie(){
-      this.productosServicio.recuperarCookie().subscribe(result => this.cookie = result);
     }
 
     recuperarClientes() {
@@ -65,26 +63,23 @@ export class FormularioComponent implements OnInit {
       });
     }
 
-    usuarioCookie() {
-      this.productosServicio.usuarioCookie(this.cliente.identidad,this.cliente.password);
-    }
-
     acceso() {
 
         this.recuperarClientes();
-
         this.clientes.forEach(element => {
 
             if ((this.cliente.identidad==element.nombre  || this.cliente.identidad==element.correo) && this.cliente.password==element.password) {
               this.codigo = element.codigo;
               this.flag=true;
+              Cookies.set('identidad', element.nombre);
+              Cookies.set('password', element.password);
             }
         });
 
         if (!this.flag) {
             swal("El usuario introducido no existe. Revise si los datos son erroneos");
         } else{
-          this.usuarioCookie();
+
           this.registrarCodigo();
           this.router.navigate(['/areaCliente']);
         }
