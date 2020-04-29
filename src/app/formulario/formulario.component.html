@@ -1,24 +1,22 @@
 <body>
-
     <div class="contenedor">
 
         <h1>ACCEDA AL AREA DE CLIENTES</h1>
         <h4>Introduce tu nickname o correo</h4>
         <div class="caja">
           <mat-form-field >
-            <input matInput type="text" placeholder="Ingrese nombre o correo" [(ngModel)]="cliente.identidad" value={{cliente.identidad}}>
+            <input matInput type="text" placeholder="Ingrese nombre o correo" [(ngModel)]="cliente.identidad">
           </mat-form-field>
         </div>
         <h4>Introduce tu contraseña</h4>
         <div class="caja">
           <mat-form-field>
-            <input matInput  type="text" placeholder="Ingrese contraseña" [(ngModel)]="cliente.password" value={{cliente.password}}>
+            <input matInput  type="text" placeholder="Ingrese contraseña" [(ngModel)]="cliente.password">
           </mat-form-field>
         </div>
 
-        <button mat-raised-button color="primary" id="botonAcceso" (click)="acceso()" > Acceder</button>
+        <button mat-raised-button color="primary" id="botonAcceso" (click)="acceso()"> Acceder</button>
 
     </div>
-
 </body>
 

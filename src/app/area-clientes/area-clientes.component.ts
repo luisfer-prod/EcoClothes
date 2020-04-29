@@ -18,9 +18,9 @@ export class AreaClientesComponent implements OnInit {
   total=0;
   autoSaveInterval;
   contador : number = 0;
-  pedidos=null;
   pedidoUnico=null;
   codigoCli;
+  pedidoActivo=null;
 
   art={
     codigo:null,
@@ -30,6 +30,8 @@ export class AreaClientesComponent implements OnInit {
     descuento:null
   }
 
+  pedidos;
+
 
   constructor(
     private productosServicio: ProductosService,
@@ -38,31 +40,72 @@ export class AreaClientesComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.codigoCliente();
+    this.recuperarPedidos();
+    this.recuperarPedidoActivo();
     this.recuperarTodos();
     this.sesion();
     this.aparecer();
     this.esconder();
   }
 
-  anadirCarro(codigoArticulo){
+  recuperarPedidos(){
+    this.productosServicio.recuperar().subscribe(result => this.pedidos = result);
+   }
+
+   recuperarPedidoActivo(){
+    this.productosServicio.recuperarPedidoActivo().subscribe(result => this.pedidoActivo = result);
+   }
+
+  carrito(codigo,precio){
+
+    this.total++;
+    this.anadir(codigo,precio);
+  }
+
+  anadir(codigoArticulo,precio){
 
     var flag=false;
 
-    this.productosServicio.anadirCarro().subscribe(result => this.pedidos = result);
-    this.codigoCliente();
-
     this.pedidos.forEach(element => {
-      if (element.codigo_cliente==this.codigoCli) {
-        var codigoPedido = element.codigo_pedido;
+      if (element.codigo_cliente==this.codigoCli[this.codigoCli.length-1].codigo) {
+        var codigoPedido = element.codigo;
         this.insertarPedidoExistente(codigoPedido,codigoArticulo);
-      } else {
-
+        flag=true;
       }
+    });
+
+    if (!flag) {
+      this.nuevoPedido(this.codigoCli[this.codigoCli.length-1].codigo,precio,codigoArticulo);
+    }
+  }
+
+  nuevoPedido(codigoCli,precio,codigoArticulo){
+    this.productosServicio.nuevoPedido(codigoCli,precio,codigoArticulo).subscribe(datos => {
+
+        this.recuperarTodos();
+        this.recuperarPedidoActivo();
+
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/areaCliente']);
+        });
+
     });
   }
 
+
   insertarPedidoExistente(codigoPedido,codigoArticulo){
-    this.productosServicio.pedidoEspecifico(codigoPedido,codigoArticulo).subscribe(result => this.pedidoUnico = result);
+    this.productosServicio.pedidoEspecifico(codigoPedido,codigoArticulo).subscribe(datos => {
+
+        this.recuperarTodos();
+        this.recuperarPedidoActivo();
+
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/areaCliente']);
+        });
+      }
+    );
 
   }
 
@@ -70,9 +113,7 @@ export class AreaClientesComponent implements OnInit {
     this.productosServicio.codigoCliente().subscribe(result => this.codigoCli = result);
   }
 
-  carrito(codigo){
-    this.total++;
-  }
+
 
   aparecer(){
    var hola = document.getElementById('hola');

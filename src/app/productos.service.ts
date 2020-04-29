@@ -58,8 +58,8 @@ export class ProductosService {
       return this.http.get(`${this.url}extraerNombre.php`);
     }
 
-    anadirCarro(){
-      return this.http.get(`${this.url}anadirCarro.php`);
+    recuperar(){
+      return this.http.get(`${this.url}recuperar.php`);
     }
 
     codigoCliente(){
@@ -67,7 +67,23 @@ export class ProductosService {
     }
 
     pedidoEspecifico(codigoPedido,codigoArticulo){
-      return this.http.get(`${this.url}pedidoEspecifico.php?codigo='${codigoPedido}'&articulo='${codigoArticulo}'`);
+      return this.http.get(`${this.url}pedidoEspecifico.php?codigo=${codigoPedido}&articulo=${codigoArticulo}`);
+    }
+
+    nuevoPedido(codigoCli,precio,codigoArticulo){
+      return this.http.get(`${this.url}nuevoPedido.php?codigoCli=${codigoCli}&precio=${precio}&articulo=${codigoArticulo}`);
+    }
+
+    recuperarPedidoActivo(){
+      return this.http.get(`${this.url}recuperarPedidoActivo.php`);
+    }
+
+    usuarioCookie(identidad,password){
+      return this.http.get(`${this.url}usuarioCookie.php?identidad=${identidad}&password=${password}`);
+    }
+
+    recuperarCookie(){
+      return this.http.get(`${this.url}recuperarCookie.php`);
     }
 }
 

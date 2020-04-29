@@ -11,11 +11,11 @@
         <td>Nombre</td><td>Imagen</td><td>Precio</td><td>Descuento</td><td>Añadir</td><!--<td>Seleccionar</td>-->
       </tr>
       <tr scope="row" *ngFor="let art of articulos">
-        <td scope="col">{{art.nombre}}</td>
+        <td>{{art.nombre}}</td>
         <td><img src='assets/{{art.imagen}}'></td>
-        <td scope="col">{{art.precio}}</td>
+        <td>{{art.precio}}</td>
         <td>{{art.descuento}}</td>
-        <td scope="col"><button (click)="carrito(art.codigo)" (click)="anadirCarro(art.codigo)">Añadir al carrito</button></td>
+        <td><button (click)="carrito(art.codigo,art.precio)">Añadir al carrito</button></td>
         <!-- <td><button (click)="seleccionar(art.codigo)">Seleccionar</button></td> -->
       </tr>
     </table>
@@ -40,16 +40,16 @@
 </div>
 
 
-<div class="contenedor">
+<div class="contenedor" *ngIf="hayRegistros(); else sinpedidos">
 
-    <ul class="list-group">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        Cras justo odio
-        <span class="badge badge-primary badge-pill">14</span>
+    <ul class="list-group" >
+      <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let ped of pedidoActivo">
+        {{ped.nomProducto}}
+        <span class="badge badge-primary badge-pill">{{ped.cantidad}}</span>
       </li>
     </ul>
 
-    <ng-template #sinpedido><p>No hay articulos.</p></ng-template>
+
 
     <div class="columna">
       <img src="../assets/carrito.png" alt="" class="carro">
@@ -59,4 +59,4 @@
 
 </div>
 
-
+<ng-template #sinpedidos><p>No hay articulos.</p></ng-template>

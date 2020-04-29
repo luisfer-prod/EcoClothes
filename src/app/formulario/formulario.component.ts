@@ -46,6 +46,11 @@ export class FormularioComponent implements OnInit {
 
     ngOnInit(): void {
         this.recuperarClientes();
+        this.recuperarCookie();
+    }
+
+    recuperarCookie(){
+      this.productosServicio.recuperarCookie().subscribe(result => this.cookie = result);
     }
 
     recuperarClientes() {
@@ -60,6 +65,10 @@ export class FormularioComponent implements OnInit {
       });
     }
 
+    usuarioCookie() {
+      this.productosServicio.usuarioCookie(this.cliente.identidad,this.cliente.password);
+    }
+
     acceso() {
 
         this.recuperarClientes();
@@ -67,17 +76,15 @@ export class FormularioComponent implements OnInit {
         this.clientes.forEach(element => {
 
             if ((this.cliente.identidad==element.nombre  || this.cliente.identidad==element.correo) && this.cliente.password==element.password) {
-
               this.codigo = element.codigo;
               this.flag=true;
-
             }
-
         });
 
         if (!this.flag) {
             swal("El usuario introducido no existe. Revise si los datos son erroneos");
         } else{
+          this.usuarioCookie();
           this.registrarCodigo();
           this.router.navigate(['/areaCliente']);
         }

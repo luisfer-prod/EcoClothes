@@ -23,7 +23,8 @@ export class NavegadorComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.nombre = interval(50).subscribe(() => this.productosServicio.extraerNombre().subscribe(result => this.nombre=result));
+    this.nombre = interval(1000).subscribe(() => this.productosServicio.extraerNombre().subscribe(result => this.nombre=result));
+    //result => (typeof(this.nombre))?'string':this.nombre= result)
     this.esconderSesionInicio();
   }
 
@@ -42,12 +43,5 @@ export class NavegadorComponent implements OnInit {
     usuario.style.display='none';
     usuario.style.visibility='hidden';
   }
-
-
-
-
-
-
-
 
 }
