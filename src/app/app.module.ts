@@ -23,6 +23,8 @@ import { AreaClientesComponent } from './area-clientes/area-clientes.component';
 import { QuieneSomosComponent } from './quiene-somos/quiene-somos.component';
 import { MedioAmbienteComponent } from './medio-ambiente/medio-ambiente.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
+import { CreditoComponent } from './credito/credito.component';
 
 
 
@@ -36,7 +38,9 @@ import { PrincipalComponent } from './principal/principal.component';
     AreaClientesComponent,
     QuieneSomosComponent,
     MedioAmbienteComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    ConfirmacionComponent,
+    CreditoComponent
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,7 @@ export class FormularioComponent implements OnInit {
     cliente={
       codigo:null,
       identidad:Cookies.get('identidad'),
-      password:null
+      password:Cookies.get('password')
     }
 
 

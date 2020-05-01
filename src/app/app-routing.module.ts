@@ -8,6 +8,8 @@ import { QuieneSomosComponent } from './quiene-somos/quiene-somos.component';
 import { AppComponent } from './app.component';
 import { MedioAmbienteComponent } from './medio-ambiente/medio-ambiente.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
+import { CreditoComponent } from './credito/credito.component';
 
 const routes: Routes = [{
   path:'formulario',
@@ -36,6 +38,14 @@ const routes: Routes = [{
 {
   path:'',
   component:PrincipalComponent
+},
+{
+  path:'confirmacion',
+  component:ConfirmacionComponent
+},
+{
+  path:'credito',
+  component:CreditoComponent
 }
 ];
 

@@ -1,0 +1,11 @@
+.contenedor{
+  display: flex;
+  justify-content: center;
+  background-color: chartreuse;
+
+}
+
+.columna{
+  display: flex;
+  flex-direction: column;
+}
