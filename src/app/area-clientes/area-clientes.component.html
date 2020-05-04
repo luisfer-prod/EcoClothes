@@ -7,17 +7,31 @@
   <h1>Administración de artículos</h1>
 
     <table class="table table-warning table-bordered" border="1" *ngIf="hayRegistros(); else sinarticulos">
+
       <tr scope="row">
-        <td>Nombre</td><td>Imagen</td><td>Precio</td><td>Descuento</td><td>Añadir</td><!--<td>Seleccionar</td>-->
+        <td *ngFor="let art of articulos">
+          <div class="card" style="width: 18rem;" >
+            <img src='assets/{{art.imagen}}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{art.nombre}}</h5>
+              <p class="card-text">Precio: {{art.precio}}</p>
+              <p class="card-text">Descuento: {{art.descuento}}</p>
+              <a href="#" class="btn btn-primary" (click)="carrito(art.codigo,art.precio)">Añadir al carrito</a>
+            </div>
+          </div>
+        </td>
       </tr>
-      <tr scope="row" *ngFor="let art of articulos">
-        <td>{{art.nombre}}</td>
+
+
+
+      <!-- <tr scope="row" *ngFor="let art of articulos">
+        {{art.nombre}}
         <td><img src='assets/{{art.imagen}}'></td>
         <td>{{art.precio}}</td>
         <td>{{art.descuento}}</td>
         <td><button (click)="carrito(art.codigo,art.precio)">Añadir al carrito</button></td>
-        <!-- <td><button (click)="seleccionar(art.codigo)">Seleccionar</button></td> -->
-      </tr>
+         <td><button (click)="seleccionar(art.codigo)">Seleccionar</button></td>
+      </tr> -->
     </table>
 
     <ng-template #sinarticulos><p>No hay articulos.</p></ng-template>

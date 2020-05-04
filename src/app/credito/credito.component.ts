@@ -46,53 +46,68 @@ export class CreditoComponent implements OnInit {
     boton.style.display = 'none';
   }
 
-  compruebaDatos(){
 
-    var fechaCambiada = this.fecha.split('-');
-    var d = new Date();
-    var dia = d.getDate();
-    var mes = d.getMonth();
-    var year = d.getFullYear();
+  accesoDirecto(){
+    this.router.navigate(['/confirmacion']);
+  }
 
-    mes++;
 
-    console.log(fechaCambiada);
-    console.log(year);
-    console.log(mes);
-    console.log(dia);
+    compruebaDatos(){
 
-     if (fechaCambiada[0]<year || ( fechaCambiada[0]==year && fechaCambiada[1]<mes )
-     || (  fechaCambiada[0]==year && fechaCambiada[1]==mes &&  fechaCambiada[2]<dia ) ) {
+      // console.log(fechaCambiada);
+      // console.log(year);
+      // console.log(mes);
+      // console.log(dia);
 
-        sweetAlert('Su tarjeta de crédito esta caducada. Por favor, renuévela');
+      if (this.fecha==null) {
 
-     } else {
+        sweetAlert('No ha introducido ninguna fecha');
 
-        if (this.codigo!=null) {
+      } else {
 
-          var length = Math.log(this.codigo) * Math.LOG10E + 1 | 0;
-          console.log(length);
+        var fechaCambiada = this.fecha.split('-');
+        var d = new Date();
+        var dia = d.getDate();
+        var mes = d.getMonth();
+        var year = d.getFullYear();
 
-           if ( length<3 || length>3 ) {
+        mes++;
 
-            sweetAlert('El código de seguridad no mide 3 dígitos');
+        if (fechaCambiada[0]<year || ( fechaCambiada[0]==year && fechaCambiada[1]<mes )
+        || (  fechaCambiada[0]==year && fechaCambiada[1]==mes &&  fechaCambiada[2]<dia ) ) {
 
-          } else {
-
-            var patron=/^\d{4}\-\d{4}\-\d{4}\-\d{4}$/;
-
-            if (patron.test(this.tarjeta)){
-              this.router.navigate(['/confirmacion']);
-            } else {
-              sweetAlert('El número de tarjeta introducido no es el correcto. Debe tener el formato xxxx-xxxx-xxxx-xxxx');
-            }
-
-          }
+            sweetAlert('Su tarjeta de crédito esta caducada. Por favor, renuévela');
 
         } else {
-          sweetAlert('El código de seguridad está vacío');
+
+            if (this.codigo!=null) {
+
+              var length = Math.log(this.codigo) * Math.LOG10E + 1 | 0;
+              console.log(length);
+
+              if ( length<3 || length>3 ) {
+
+                sweetAlert('El código de seguridad no mide 3 dígitos');
+
+              } else {
+
+                var patron=/^\d{4}\-\d{4}\-\d{4}\-\d{4}$/;
+
+                if (patron.test(this.tarjeta)){
+                  this.router.navigate(['/confirmacion']);
+                } else {
+                  sweetAlert('El número de tarjeta introducido no es el correcto. Debe tener el formato xxxx-xxxx-xxxx-xxxx');
+                }
+
+              }
+
+            } else {
+              sweetAlert('El código de seguridad está vacío');
+            }
         }
-     }
-  }
+
+      }
+
+    }
 
 }

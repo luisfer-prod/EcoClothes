@@ -54,6 +54,16 @@ table{
   margin-left: 300px;
 }
 
+img{
+  margin-left: 45px;
+  width: 200px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 

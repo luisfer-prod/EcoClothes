@@ -50,6 +50,8 @@ export class LoginComponent implements OnInit {
     var cerrar = document.getElementById('cerrar');
     var hola = document.getElementById('hola');
     var usuario = document.getElementById('usuario');
+    var boton = document.getElementById('botonCliente');
+
 
     iniciar.style.display='inline';
     iniciar.style.visibility='visible';
@@ -65,6 +67,9 @@ export class LoginComponent implements OnInit {
 
     usuario.style.display='none';
     usuario.style.visibility='hidden';
+
+    boton.style.display = 'none';
+    boton.style.visibility = 'hidden';
   }
 
 

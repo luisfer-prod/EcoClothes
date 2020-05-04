@@ -1,27 +1,43 @@
-<div class="navegador">
+<div class="navegador" id="navegador">
 
 <button mat-button [matMenuTriggerFor]="menu" class="boton" ><img src="assets/barras.png" alt="barras"></button>
 
 
-  <img class='usuario' id='usuario' src="../../assets/usuario.png" alt="">
+<img class='usuario' id='usuario' src="../../assets/usuario.png" alt="">
 
-  <h2 id='hola'async>Bienvenido {{nombre.nombre}}</h2>
-
-
+<h2 id='hola'async>Bienvenido {{nombre.nombre}}</h2>
 
 
 
-<mat-menu #menu="matMenu">
+<mat-menu #menu="matMenu" id="menu" class="menu">
   <button mat-menu-item routerLink="/quieneSomos">Quienes somos</button>
   <button mat-menu-item routerLink="/medioAmbiente">Medio ambiente</button>
   <button mat-menu-item>Catálogo</button>
 </mat-menu>
 
+
+
 <a class="fondo_titulo" routerLink="">
   <img src="assets/logo_alpha.png" alt="">
 </a>
+
+<button  type="button" class="btn btn-warning" routerLink="/areaCliente" id="botonCliente">Area de {{nombre.nombre}}</button>
 
 
 <app-login></app-login>
 
 </div>
+
+
+<div class="alert alert-success" role="alert" id="alert">
+  <h4 class="alert-heading">Bien hecho!</h4>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p>Tu pedido ha sido realizado y ya está siendo transportado hacia su destino. En cuestión de días debería llegar a su domicilio</p>
+  <hr>
+  <p class="mb-0">Le hemos enviado un correo electrónico con la información del mismo y la factura. Comprueba su bandeja de entrada.</p>
+</div>
+
+
+

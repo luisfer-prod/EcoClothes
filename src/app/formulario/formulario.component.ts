@@ -15,7 +15,7 @@ import * as Cookies from 'js-cookie';
 export class FormularioComponent implements OnInit {
 
 
-  casa = 'casa';
+    casa = 'casa';
 
     codigo = null;
 

@@ -118,12 +118,16 @@ export class AreaClientesComponent implements OnInit {
   aparecer(){
    var hola = document.getElementById('hola');
    var usuario = document.getElementById('usuario');
+   var boton = document.getElementById('botonCliente');
 
    hola.style.display='inline';
    hola.style.visibility='visible';
 
    usuario.style.display='inline';
    usuario.style.visibility='visible';
+
+   boton.style.display='inline';
+   boton.style.visibility='visible';
   }
 
   esconder(){
