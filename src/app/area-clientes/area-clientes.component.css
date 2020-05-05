@@ -32,11 +32,15 @@ table{
 }
 
 .contenedor{
+  top:80px;
+  position: sticky;
   margin-top: 5%;
   margin-right: 150px;
   margin-left: 200px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+
 }
 
 .carro{
@@ -62,6 +66,12 @@ img{
 .card{
   display: flex;
   flex-direction: column;
+}
+
+#fila{
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
 }
 
 

@@ -22,6 +22,7 @@ export class AreaClientesComponent implements OnInit {
   codigoCli;
   pedidoActivo=null;
 
+
   art={
     codigo:null,
     nombre:null,
@@ -48,6 +49,12 @@ export class AreaClientesComponent implements OnInit {
     this.sesion();
     this.aparecer();
     this.esconder();
+    this.sumaContador();
+  }
+
+  sumaContador(){
+    this.contador++;
+    console.log(this.contador);
   }
 
   recuperarPedidos(){
