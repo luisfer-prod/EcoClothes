@@ -51,29 +51,63 @@
     <div class="card-body">
       <h5 class="card-title">Unisex</h5>
       <p class="card-text"> Las mejores prendas para ambos sexos. Da igual que tipo de personas sea, que podrás vestir cualquiera de estas prendas. </p>
-      <a href="#" class="btn btn-primary" (click)="recuperarPrendas('unisex')">Desplegar</a>
     </div>
 
-    <ul>
-      <li *ngFor="let pred of prendas;let indice=index">
-        <img src='assets/{{pred.imagen}}' alt="">
-      </li>
-    </ul>
+    <div class="btn-group">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="recuperarPrendas('unisex')">
+        Action
+      </button>
+      <div class="dropdown-menu" >
+        <div class="celda" *ngFor="let pred of prendas">
+          <img src='assets/{{pred.imagen}}' alt="">
+          <h4>{{pred.nombre}}</h4>
+        </div>
+        <div class="dropdown-divider"></div>
+      </div>
+    </div>
+
   </div>
+
   <div class="card" style="width: 18rem;">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Hombre</h5>
       <p class="card-text">Aprende a vestir como un caballero respetando el medio-ambiente.</p>
-      <a href="#" class="btn btn-primary">Desplegar</a>
     </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="recuperarPrendas('hombre')">
+        Action
+      </button>
+      <div class="dropdown-menu" >
+        <div class="celda" *ngFor="let pred of prendas">
+          <img src='assets/{{pred.imagen}}' alt="">
+          <h4>{{pred.nombre}}</h4>
+        </div>
+        <div class="dropdown-divider"></div>
+      </div>
+    </div>
+
   </div>
+
   <div class="card" style="width: 18rem;">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Mujer</h5>
       <p class="card-text">La moda ecólogica mas actualizada se encuentra entre nuestros vestidores. Ve a la última siguiendo nuestras principales tendencias.</p>
-      <a href="#" class="btn btn-primary">Desplegar</a>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="recuperarPrendas('mujer')">
+        Action
+      </button>
+      <div class="dropdown-menu" >
+        <div class="celda" *ngFor="let pred of prendas">
+          <img src='assets/{{pred.imagen}}' alt="">
+          <h4>{{pred.nombre}}</h4>
+        </div>
+        <div class="dropdown-divider"></div>
+      </div>
     </div>
   </div>
 </div>
