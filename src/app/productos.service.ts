@@ -86,5 +86,9 @@ export class ProductosService {
     recuperarCookie(){
       return this.http.get(`${this.url}recuperarCookie.php`);
     }
+
+    recuperarPrendas(categoria){
+      return this.http.get(`${this.url}recuperarPrendas.php?categoria=${categoria}`);
+    }
 }
 

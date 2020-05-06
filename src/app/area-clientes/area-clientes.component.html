@@ -9,24 +9,29 @@
 <div class="fondo">
 
   <h1>Administración de artículos</h1>
-  <div class="contenedor" *ngIf="hayRegistros(); else sinpedidos">
 
-    <ul class="list-group" >
-      <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let ped of pedidoActivo">
-        {{ped.nomProducto}}
-        <span class="badge badge-primary badge-pill">{{ped.cantidad}}</span>
-      </li>
-    </ul>
 
-    <div class="columna">
-      <img src="../assets/carrito.png" alt="" class="carro">
-      <br><br>
-      <h1> <strong>HAY {{total}} PRODUCTOS </strong> </h1>
-      <button id="fin" routerLink="/credito">FINALIZAR COMPRA</button>
-    </div>
-  </div>
 
     <table class="table table-warning table-bordered" border="1" *ngIf="hayRegistros(); else sinarticulos" >
+
+
+      <div class="contenedor" *ngIf="hayRegistros(); else sinpedidos">
+
+        <ul class="list-group" >
+          <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let ped of pedidoActivo">
+            {{ped.nomProducto}}
+            <span class="badge badge-primary badge-pill">{{ped.cantidad}}</span>
+          </li>
+        </ul>
+
+        <div class="columna">
+          <img src="../assets/carrito.png" alt="" class="carro">
+          <br><br>
+          <h1> <strong>HAY {{total}} PRODUCTOS </strong> </h1>
+          <button id="fin" routerLink="/credito">FINALIZAR COMPRA</button>
+        </div>
+      </div>
+
 
       <tr scope="row" id="fila" >
         <td *ngFor="let art of articulos;let indice=index">

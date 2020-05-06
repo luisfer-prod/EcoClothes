@@ -32,14 +32,13 @@ table{
 }
 
 .contenedor{
-  top:80px;
+  top:180px;
   position: sticky;
-  margin-top: 5%;
-  margin-right: 150px;
-  margin-left: 200px;
+  margin-left: 600px;
+  margin-top: 40px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
 
 }
 
@@ -49,13 +48,15 @@ table{
 
 .columna{
 
+
   display:flex;
   flex-direction: column;
+
 }
 
 .list-group span{
 
-  margin-left: 300px;
+  margin-left: 100px;
 }
 
 img{

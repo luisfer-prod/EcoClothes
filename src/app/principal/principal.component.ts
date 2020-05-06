@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosService } from '../productos.service';
 
 @Component({
   selector: 'app-principal',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productosServicio: ProductosService) { }
+
+  prendas = null
 
   ngOnInit(): void {
+  }
+
+  recuperarPrendas(categoria) {
+    this.productosServicio.recuperarPrendas(categoria).subscribe(result => this.prendas = result);
   }
 
 }

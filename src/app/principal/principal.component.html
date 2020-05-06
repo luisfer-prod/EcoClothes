@@ -49,25 +49,31 @@
   <div class="card" style="width: 18rem;">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">Unisex</h5>
+      <p class="card-text"> Las mejores prendas para ambos sexos. Da igual que tipo de personas sea, que podrás vestir cualquiera de estas prendas. </p>
+      <a href="#" class="btn btn-primary" (click)="recuperarPrendas('unisex')">Desplegar</a>
+    </div>
+
+    <ul>
+      <li *ngFor="let pred of prendas;let indice=index">
+        <img src='assets/{{pred.imagen}}' alt="">
+      </li>
+    </ul>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Hombre</h5>
+      <p class="card-text">Aprende a vestir como un caballero respetando el medio-ambiente.</p>
+      <a href="#" class="btn btn-primary">Desplegar</a>
     </div>
   </div>
   <div class="card" style="width: 18rem;">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">Mujer</h5>
+      <p class="card-text">La moda ecólogica mas actualizada se encuentra entre nuestros vestidores. Ve a la última siguiendo nuestras principales tendencias.</p>
+      <a href="#" class="btn btn-primary">Desplegar</a>
     </div>
   </div>
 </div>
