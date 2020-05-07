@@ -1,0 +1,14 @@
+.contenedor{
+
+  width:80%;
+  margin-left: 10%;
+  background-image: url('/assets/textura.jpg');
+  padding: 40px;
+  color: aliceblue;
+  border-radius: 20px;
+
+}
+
+.contenedor button{
+  margin-left: 40%;
+}

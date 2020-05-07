@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 import { ProductosService } from '../productos.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';

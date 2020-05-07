@@ -19,18 +19,18 @@ export class NavegadorComponent implements OnInit {
 
   @Input() login: LoginComponent;
 
-  nombre;
+  nombre=null;
 
   ngOnInit(): void {
 
-    this.nombre = interval(1000).subscribe(() => this.productosServicio.extraerNombre().subscribe(result => this.nombre=result));
-    //result => (typeof(this.nombre))?'string':this.nombre= result)
+    this.nombre = interval(2000).subscribe(() => this.productosServicio.extraerNombre().subscribe(result => this.nombre=result));
+    // result => (typeof(this.nombre))?'string':this.nombre= result)
     this.esconderSesionInicio();
   }
 
-  // extraerNombre(){
-  //   this.productosServicio.extraerNombre().subscribe(result => this.nombre=result);
-  //  }
+  extraerNombre(){
+    this.productosServicio.extraerNombre().subscribe(result => this.nombre=result);
+   }
 
     esconderSesionInicio(){
 

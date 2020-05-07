@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { FormularioComponent } from './formulario/formulario.component';
 import { RegistroComponent } from './registro/registro.component';
@@ -10,6 +11,8 @@ import { MedioAmbienteComponent } from './medio-ambiente/medio-ambiente.componen
 import { PrincipalComponent } from './principal/principal.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 import { CreditoComponent } from './credito/credito.component';
+import {IncidenciasComponent} from './incidencias/incidencias.component';
+
 
 const routes: Routes = [{
   path:'formulario',
@@ -46,6 +49,10 @@ const routes: Routes = [{
 {
   path:'credito',
   component:CreditoComponent
+},
+{
+  path:'incidencias',
+  component:IncidenciasComponent
 }
 ];
 

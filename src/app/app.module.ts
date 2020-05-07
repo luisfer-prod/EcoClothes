@@ -25,6 +25,13 @@ import { MedioAmbienteComponent } from './medio-ambiente/medio-ambiente.componen
 import { PrincipalComponent } from './principal/principal.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 import { CreditoComponent } from './credito/credito.component';
+import { IncidenciasComponent } from './incidencias/incidencias.component';
+
+
+
+
+
+
 
 
 
@@ -40,7 +47,8 @@ import { CreditoComponent } from './credito/credito.component';
     MedioAmbienteComponent,
     PrincipalComponent,
     ConfirmacionComponent,
-    CreditoComponent
+    CreditoComponent,
+    IncidenciasComponent
   ],
   imports: [
     BrowserModule,

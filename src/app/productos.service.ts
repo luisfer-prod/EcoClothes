@@ -51,6 +51,7 @@ export class ProductosService {
     registrarCodigo(codigo:number){
       return this.http.get(`${this.url}registrarCodigo.php?codigo='${codigo}'`);
     }
+
     borrarUltimo(){
       return this.http.get(`${this.url}borrarUltimo.php`);
     }
@@ -89,6 +90,10 @@ export class ProductosService {
 
     recuperarPrendas(categoria){
       return this.http.get(`${this.url}recuperarPrendas.php?categoria=${categoria}`);
+    }
+
+    registrarReclamacion(nivel,texto){
+      return this.http.get(`${this.url}registrarReclamacion.php?nivel=${nivel}&texto=${texto}`);
     }
 }
 
