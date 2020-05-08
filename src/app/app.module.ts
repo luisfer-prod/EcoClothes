@@ -26,6 +26,7 @@ import { PrincipalComponent } from './principal/principal.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 import { CreditoComponent } from './credito/credito.component';
 import { IncidenciasComponent } from './incidencias/incidencias.component';
+import { TituloComponent } from './titulo/titulo.component';
 
 
 
@@ -48,7 +49,8 @@ import { IncidenciasComponent } from './incidencias/incidencias.component';
     PrincipalComponent,
     ConfirmacionComponent,
     CreditoComponent,
-    IncidenciasComponent
+    IncidenciasComponent,
+    TituloComponent
   ],
   imports: [
     BrowserModule,

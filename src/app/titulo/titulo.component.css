@@ -1,0 +1,31 @@
+.contenedor{
+
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+
+}
+
+#titulo{
+  color: darkgreen;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 15px;
+  letter-spacing: 45px;
+  padding-bottom: 1px;
+
+}
+
+.subtitulo{
+  display: flex;
+  justify-content: end;
+  margin-bottom: 0.1px;
+}
+
+#subtitulo{
+
+  color: black;
+  font-size: x-small;
+  margin-left: 1%;
+  margin-bottom: 0.1px;
+}
