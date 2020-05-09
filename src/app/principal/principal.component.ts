@@ -13,10 +13,22 @@ export class PrincipalComponent implements OnInit {
   prendas = null
 
   ngOnInit(): void {
+
+    this.quitarSticky();
   }
 
   recuperarPrendas(categoria) {
     this.productosServicio.recuperarPrendas(categoria).subscribe(result => this.prendas = result);
   }
+
+  quitarSticky(){
+
+    var navegador = document.getElementById("navegador");
+
+    navegador.style.position='sticky';
+
+    // top:10px;
+    // position: sticky;
+   }
 
 }
