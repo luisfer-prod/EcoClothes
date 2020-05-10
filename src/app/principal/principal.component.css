@@ -40,4 +40,12 @@ footer .piePagina ul{
   justify-content: space-evenly;
 }
 
+#parrafoPie{
+
+  font-size: 10px;
+}
+
+a{
+  color: aliceblue;
+}
 
