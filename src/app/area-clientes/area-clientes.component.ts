@@ -108,9 +108,9 @@ export class AreaClientesComponent implements OnInit {
         this.recuperarTodos();
         this.recuperarPedidoActivo();
 
-        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-          this.router.navigate(['/areaCliente']);
-        });
+        // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        //   this.router.navigate(['/areaCliente']);
+        // });
       }
     );
 

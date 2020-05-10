@@ -26,6 +26,8 @@ export class RegistroComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    this.quitarSticky();
   }
 
   registro() {
@@ -42,5 +44,13 @@ export class RegistroComponent implements OnInit {
         });
       }
   }
+
+  quitarSticky(){
+
+    var navegador = document.getElementById("navegador");
+
+    navegador.style.position='static';
+
+   }
 
 }

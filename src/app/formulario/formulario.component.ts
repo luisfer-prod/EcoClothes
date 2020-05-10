@@ -49,7 +49,16 @@ export class FormularioComponent implements OnInit {
 
     ngOnInit() {
         this.recuperarClientes();
+        this.quitarSticky();
     }
+
+    quitarSticky(){
+
+      var navegador = document.getElementById("navegador");
+
+      navegador.style.position='static';
+
+     }
 
     recuperarClientes() {
       this.productosServicio.recuperarClientes().subscribe(result => this.clientes = result);

@@ -75,6 +75,16 @@ img{
   margin-left: 250px;
 }
 
+#carrito{
+  color: aliceblue;
+}
+
+.listaCompra{
+
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 
