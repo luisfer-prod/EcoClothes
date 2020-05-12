@@ -1,6 +1,8 @@
 
 <br><br>
 
+<!-- CARRUSEL -->
+
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -44,10 +46,12 @@
 </div>
 
 
+<!-- FILA DE CARDS CON MENUS DESPLEGABLES POR CATEGORÍAS -->
+
 
 <div class="fila">
   <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
     <div class="card-body">
       <h5 class="card-title">Unisex</h5>
       <p class="card-text"> Las mejores prendas para ambos sexos. Da igual que tipo de personas sea, que podrás vestir cualquiera de estas prendas. </p>
@@ -69,7 +73,7 @@
   </div>
 
   <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
     <div class="card-body">
       <h5 class="card-title">Hombre</h5>
       <p class="card-text">Aprende a vestir como un caballero respetando el medio-ambiente.</p>
@@ -91,7 +95,7 @@
   </div>
 
   <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
     <div class="card-body">
       <h5 class="card-title">Mujer</h5>
       <p class="card-text">La moda ecólogica mas actualizada se encuentra entre nuestros vestidores. Ve a la última siguiendo nuestras principales tendencias.</p>
@@ -112,6 +116,35 @@
   </div>
 </div>
 
+<br><br><br><br><br><br>
+
+
+
+
+<!-- MAPA DE GOOGLE MAPS -->
+<div class="lugar">
+  <h1 class="titular">¿Donde nos encontramos?</h1>
+</div>
+<br><br>
+
+<div class="filaGoogle">
+
+  <div class="vacio"></div>
+
+  <google-map height="500px"
+  width="100%"
+  [zoom]="zoom"
+  [center]="center"
+  [options]="options" class="google"></google-map>
+
+
+  <!-- Use custom zoom buttons -->
+  <button (click)="zoomIn()">Zoom in</button>
+  <button (click)="zoomOut()">Zoom out</button>
+
+</div>
+
+<br><br><br>
 
 
 

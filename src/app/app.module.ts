@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,10 +33,6 @@ import { TituloComponent } from './titulo/titulo.component';
 
 
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +51,7 @@ import { TituloComponent } from './titulo/titulo.component';
   ],
   imports: [
     BrowserModule,
+    GoogleMapsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
@@ -62,7 +60,8 @@ import { TituloComponent } from './titulo/titulo.component';
     MatButtonModule,
     FormsModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
