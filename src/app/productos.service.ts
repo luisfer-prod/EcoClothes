@@ -95,5 +95,9 @@ export class ProductosService {
     registrarReclamacion(nivel,texto){
       return this.http.get(`${this.url}registrarReclamacion.php?nivel=${nivel}&texto=${texto}`);
     }
+
+    borrarPedido(){
+      return this.http.get(`${this.url}borrarPedido.php`);
+    }
 }
 
