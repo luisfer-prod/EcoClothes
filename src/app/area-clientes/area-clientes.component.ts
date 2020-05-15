@@ -67,6 +67,9 @@ export class AreaClientesComponent implements OnInit {
 
   carrito(codigo,precio){
 
+    this.codigoCliente();
+    this.recuperarPedidos();
+    this.recuperarPedidoActivo();
     this.total++;
     this.anadir(codigo,precio);
   }
@@ -91,12 +94,13 @@ export class AreaClientesComponent implements OnInit {
   nuevoPedido(codigoCli,precio,codigoArticulo){
     this.productosServicio.nuevoPedido(codigoCli,precio,codigoArticulo).subscribe(datos => {
 
-        this.recuperarTodos();
-        this.recuperarPedidoActivo();
-
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
           this.router.navigate(['/areaCliente']);
         });
+
+        this.recuperarTodos();
+        this.recuperarPedidos();
+        this.recuperarPedidoActivo();
 
     });
   }
