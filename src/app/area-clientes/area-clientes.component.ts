@@ -21,6 +21,7 @@ export class AreaClientesComponent implements OnInit {
   pedidoUnico=null;
   codigoCli;
   pedidoActivo=null;
+  prendas = null
 
 
   art={
@@ -50,6 +51,10 @@ export class AreaClientesComponent implements OnInit {
     this.aparecer();
     this.esconder();
     this.sumaContador();
+  }
+
+  recuperarPrendas(categoria) {
+    this.productosServicio.recuperarPrendas(categoria).subscribe(result => this.articulos = result);
   }
 
   sumaContador(){
@@ -82,12 +87,14 @@ export class AreaClientesComponent implements OnInit {
       if (element.codigo_cliente==this.codigoCli[this.codigoCli.length-1].codigo) {
         var codigoPedido = element.codigo;
         this.insertarPedidoExistente(codigoPedido,codigoArticulo);
+        this.recuperarPedidoActivo();
         flag=true;
       }
     });
 
     if (!flag) {
       this.nuevoPedido(this.codigoCli[this.codigoCli.length-1].codigo,precio,codigoArticulo);
+      this.recuperarPedidoActivo();
     }
   }
 
@@ -96,21 +103,16 @@ export class AreaClientesComponent implements OnInit {
 
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
           this.router.navigate(['/areaCliente']);
-        });
-
-        this.recuperarTodos();
-        this.recuperarPedidos();
-        this.recuperarPedidoActivo();
-
+        })
     });
+
+    this.recuperarPedidos();
+    this.recuperarPedidoActivo();
   }
 
 
   insertarPedidoExistente(codigoPedido,codigoArticulo){
     this.productosServicio.pedidoEspecifico(codigoPedido,codigoArticulo).subscribe(datos => {
-
-        this.recuperarTodos();
-        this.recuperarPedidoActivo();
 
         // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         //   this.router.navigate(['/areaCliente']);
@@ -118,6 +120,8 @@ export class AreaClientesComponent implements OnInit {
       }
     );
 
+    this.recuperarTodos();
+    this.recuperarPedidoActivo();
   }
 
   codigoCliente(){

@@ -8,7 +8,23 @@
     <table class="table table-warning table-bordered" border="1" *ngIf="hayRegistros(); else sinarticulos" >
 
 
-      <div class="contenedor" *ngIf="hayRegistros(); else sinpedidos">
+
+      <div class="categoria">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categoria
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button" (click)="recuperarTodos()">(Todos)</button>
+            <button class="dropdown-item" type="button" (click)="recuperarPrendas('mujer')">Mujer</button>
+            <button class="dropdown-item" type="button" (click)="recuperarPrendas('hombre')">Hombre</button>
+            <button class="dropdown-item" type="button" (click)="recuperarPrendas('unisex')">Unisex</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="contenedor">
         <div class="listaCompra">
           <h1>Lista de la compra</h1>
           <ul class="list-group" >
