@@ -15,14 +15,24 @@ export class AreaClientesComponent implements OnInit {
 
   articulos=null;
   prueba=null;
-  total=0;
+  total : number =0;
   autoSaveInterval;
   contador : number = 0;
   pedidoUnico=null;
   codigoCli;
-  pedidoActivo=null;
+
   prendas = null
 
+  // pedidoActivo = {
+  //   codigoPedido:null,
+  //   total:null,
+  //   codigo_cliente:null,
+  //   codigoProducto:null,
+  //   nomProducto:null,
+  //   cantidad:null
+  // }
+
+  pedidoActivo;
 
   art={
     codigo:null,
@@ -44,13 +54,22 @@ export class AreaClientesComponent implements OnInit {
   ngOnInit() {
 
     this.codigoCliente();
+    this.recuperarTodos();
     this.recuperarPedidos();
     this.recuperarPedidoActivo();
-    this.recuperarTodos();
     this.sesion();
     this.aparecer();
     this.esconder();
     this.sumaContador();
+  }
+
+  actualizarTotal(){
+
+    this.recuperarPedidoActivo();
+
+    this.pedidoActivo.forEach(element => {
+      this.total+=parseInt(element.cantidad);
+    });
   }
 
   recuperarPrendas(categoria) {
@@ -59,7 +78,6 @@ export class AreaClientesComponent implements OnInit {
 
   sumaContador(){
     this.contador++;
-    console.log(this.contador);
   }
 
   recuperarPedidos(){
@@ -68,6 +86,8 @@ export class AreaClientesComponent implements OnInit {
 
    recuperarPedidoActivo(){
     this.productosServicio.recuperarPedidoActivo().subscribe(result => this.pedidoActivo = result);
+
+
    }
 
   carrito(codigo,precio){
