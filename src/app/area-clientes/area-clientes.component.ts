@@ -15,7 +15,7 @@ export class AreaClientesComponent implements OnInit {
 
   articulos=null;
   prueba=null;
-  total : number =0;
+  total = null;
   autoSaveInterval;
   contador : number = 0;
   pedidoUnico=null;
@@ -60,7 +60,11 @@ export class AreaClientesComponent implements OnInit {
     this.sesion();
     this.aparecer();
     this.esconder();
-    this.sumaContador();
+    this.totalPedido();
+  }
+
+  totalPedido(){
+    this.productosServicio.totalPedido().subscribe(result => this.total = result);
   }
 
   actualizarTotal(){

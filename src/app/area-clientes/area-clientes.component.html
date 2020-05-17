@@ -24,7 +24,7 @@
       </div>
 
 
-      <div class="contenedor">
+      <div class="contenedor" >
         <div class="listaCompra">
           <h1>Lista de la compra</h1>
           <ul class="list-group" >
@@ -35,11 +35,11 @@
           </ul>
         </div>
 
-        <div class="columna">
+        <div class="columna" >
           <img src="../assets/carrito.png" alt="" class="carro">
           <br><br>
-          <h1> <strong>HAY {{total}} PRODUCTOS </strong> </h1>
-          <button id="actualizar" (click)="actualizarTotal()">ACTUALIZAR CESTA</button>
+          <h1> <strong *ngIf="total!=null;">HAY {{total.total}} PRODUCTOS </strong> </h1>
+          <!-- <button id="actualizar" (click)="actualizarTotal()">ACTUALIZAR CESTA</button> -->
           <button id="fin" routerLink="/credito">FINALIZAR COMPRA</button>
         </div>
       </div>
@@ -53,7 +53,7 @@
               <h5 class="card-title">{{art.nombre}}</h5>
               <p class="card-text">Precio: {{art.precio}}</p>
               <p class="card-text">Descuento: {{art.descuento}}</p>
-              <a id="carrito" class="btn btn-primary" (click)="carrito(art.codigo,art.precio)">Añadir al carrito </a>
+              <a id="carrito" class="btn btn-primary" (click)="carrito(art.codigo,art.precio)" (click)="totalPedido()">Añadir al carrito </a>
             </div>
           </div>
         </td>

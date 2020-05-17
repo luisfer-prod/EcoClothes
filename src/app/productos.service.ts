@@ -99,5 +99,9 @@ export class ProductosService {
     borrarPedido(){
       return this.http.get(`${this.url}borrarPedido.php`);
     }
+
+    totalPedido(){
+      return this.http.get(`${this.url}totalPedido.php`);
+    }
 }
 
