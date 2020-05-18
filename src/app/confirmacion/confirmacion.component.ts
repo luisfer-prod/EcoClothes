@@ -17,6 +17,12 @@ export class ConfirmacionComponent implements OnInit {
 
   confirmar(){
 
+    this.productosServicio.enviarCorreo().subscribe(
+      datos => {
+
+      }
+    )
+
     this.productosServicio.borrarPedido().subscribe(
       datos => {
           if (datos['resultado']=='OK') {

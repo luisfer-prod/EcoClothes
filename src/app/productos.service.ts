@@ -103,5 +103,9 @@ export class ProductosService {
     totalPedido(){
       return this.http.get(`${this.url}totalPedido.php`);
     }
+
+    enviarCorreo(){
+      return this.http.get(`${this.url}enviarCorreo.php`);
+    }
 }
 
