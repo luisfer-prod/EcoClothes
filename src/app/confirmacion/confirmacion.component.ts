@@ -19,7 +19,9 @@ export class ConfirmacionComponent implements OnInit {
 
     this.productosServicio.enviarCorreo().subscribe(
       datos => {
+        if (datos['resultado']=='OK') {
 
+            }
       }
     )
 
