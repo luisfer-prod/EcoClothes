@@ -28,6 +28,8 @@ import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 import { CreditoComponent } from './credito/credito.component';
 import { IncidenciasComponent } from './incidencias/incidencias.component';
 import { TituloComponent } from './titulo/titulo.component';
+import { AsistenciaComponent } from './asistencia/asistencia.component';
+import { PanelAyudaComponent } from './panel-ayuda/panel-ayuda.component';
 
 
 
@@ -47,7 +49,9 @@ import { TituloComponent } from './titulo/titulo.component';
     ConfirmacionComponent,
     CreditoComponent,
     IncidenciasComponent,
-    TituloComponent
+    TituloComponent,
+    AsistenciaComponent,
+    PanelAyudaComponent
   ],
   imports: [
     BrowserModule,

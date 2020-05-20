@@ -28,6 +28,18 @@ export class AppComponent implements OnInit {
 
 
 
+  apareceAyuda(){
+
+    var ayuda = document.getElementById("panel");
+    var body = document.getElementById("cuerpoBody");
+
+    ayuda.style.display = "inline";
+    ayuda.style.visibility = "visible";
+
+    // body.style.filter = "brightness(0.4)";
+
+  }
+
 
 
 }

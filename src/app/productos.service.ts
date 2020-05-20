@@ -107,5 +107,9 @@ export class ProductosService {
     enviarCorreo(){
       return this.http.get(`${this.url}enviarCorreo.php`);
     }
+
+    descargaPdf(){
+      return this.http.get(`${this.url}descargaPdf.php`);
+    }
 }
 

@@ -4,4 +4,30 @@
   z-index: 1;
 } */
 
+.contenedor{
+
+  top: 10px;
+  position: fixed;
+  z-index: 1;
+  margin-left: 87%;
+  margin-top: 40%;
+}
+
+.panel{
+
+  top: 1px;
+  position: fixed;
+  z-index: 200;
+}
+
+.panel{
+
+  display: none;
+  visibility: hidden;
+}
+
+.fondoFalso{
+
+  width: 100%;
+}
 

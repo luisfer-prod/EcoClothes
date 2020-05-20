@@ -1,9 +1,22 @@
-<body>
-<app-titulo></app-titulo>
-<br>
-<app-navegador id="navegador"></app-navegador>
-<br>
-<router-outlet>
-</router-outlet>
+<body >
+  <app-titulo></app-titulo>
+  <br>
+  <app-navegador id="navegador"></app-navegador>
+  <br>
+
+
+
+  <router-outlet id="cuerpoRouter">
+
+    <app-panel-ayuda class="panel" id="panel">
+
+    </app-panel-ayuda>
+
+    <div class="contenedor" id="contenedorAyuda">
+      <app-asistencia class="asistencia" (click)="apareceAyuda()"></app-asistencia>
+
+    </div>
+
+  </router-outlet>
 
 </body>

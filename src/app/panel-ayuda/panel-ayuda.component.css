@@ -1,0 +1,46 @@
+
+/* .container {
+  border: 1px;
+  padding: 20px;
+  margin: 20px;
+  width: 40%;
+  height: 500px;
+  border-radius: 5%;
+  margin-left: 5%;
+} */
+
+
+.background {
+
+  width: 90%;
+
+  background-color: yellow;
+  padding: 10px;
+  /* margin: 0px 0px 10px 0px; */
+  border-radius: 5%;
+  margin-top: 2%;
+  margin-left: 5%;
+  padding: 50px;
+}
+
+.background .titulo{
+
+  margin-right: 60px;
+}
+
+.background .fila{
+  display: flex;
+  justify-content: space-between;
+  margin-left: -3%;
+}
+
+.background .fila .pdf{
+
+  margin-left: 70px;
+}
+
+a{
+  color: aliceblue;
+}
+
+
