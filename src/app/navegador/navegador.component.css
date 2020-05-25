@@ -30,3 +30,12 @@
     margin-bottom: 10px;
 }
 
+#alert{
+
+ display : 'none';
+  visibility : 'hidden';
+}
+
+h2{
+  margin-top: 1.3%;
+}

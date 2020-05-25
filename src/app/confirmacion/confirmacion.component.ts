@@ -21,24 +21,33 @@ export class ConfirmacionComponent implements OnInit {
       datos => {
         if (datos['resultado']=='OK') {
 
-            }
+
+
+
+        }
       }
-    )
+    );
+
+    // var alert = document.getElementById('alert');
+
+    // alert.style.display = 'block';
+    // alert.style.visibility = 'visible';
+
+    sweetAlert('Tu pedido ha sido realizado y ya está siendo transportado hacia su destino. En cuestión de días debería llegar a su domicilio                                Le hemos enviado un correo electrónico con la información del mismo y la factura. Comprueba su bandeja de entrada.');
+
+
+    this.router.navigate(['']);
+
 
     this.productosServicio.borrarPedido().subscribe(
       datos => {
           if (datos['resultado']=='OK') {
-        //   alert(datos['mensaje']);
-        //   this.recuperarTodos();
+
+
           }
       }
     );
 
-    this.router.navigate(['']);
-
-    var alert = document.getElementById('alert');
-    alert.style.display = 'block';
-    alert.style.visibility = 'visible';
   }
 
   rechazar(){

@@ -27,3 +27,8 @@ input.mat-input-element {
   margin-left: 80px;
   margin-bottom: 30px;
 }
+
+h4{
+  display: flex;
+  justify-content: center;
+}

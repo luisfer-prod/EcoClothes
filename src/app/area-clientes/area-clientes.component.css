@@ -1,6 +1,6 @@
 .fondo{
 
-  background-color: chartreuse;
+
   display: flex;
   flex-direction: column;
 }
@@ -29,6 +29,8 @@ img{
 
 table{
   border-radius:5%;
+  background-image: url("src/assets/texturaVerde.jpg");
+
 }
 
 .contenedor{
@@ -92,7 +94,9 @@ img{
   margin-right: 35%;
 }
 
-
+td{
+  border-color: transparent;
+}
 
 
 

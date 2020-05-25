@@ -32,25 +32,24 @@ export class NavegadorComponent implements OnInit {
     this.productosServicio.extraerNombre().subscribe(result => this.nombre=result);
    }
 
-    esconderSesionInicio(){
+  esconderSesionInicio(){
 
-      var hola = document.getElementById('hola');
-      var usuario = document.getElementById('usuario');
-      var alert = document.getElementById('alert');
-      var boton = document.getElementById('botonCliente');
+    var hola = document.getElementById('hola');
+    var usuario = document.getElementById('usuario');
+    var boton = document.getElementById('botonCliente');
+    var alert = document.getElementById('alert');
 
+    hola.style.display='none';
+    hola.style.visibility='hidden';
 
-      hola.style.display='none';
-      hola.style.visibility='hidden';
+    usuario.style.display='none';
+    usuario.style.visibility='hidden';
 
-      usuario.style.display='none';
-      usuario.style.visibility='hidden';
+    alert.style.display = 'none';
+    alert.style.visibility = 'hidden';
 
-      alert.style.display = 'none';
-      alert.style.visibility = 'hidden';
+    boton.style.display = 'none';
+    boton.style.visibility = 'hidden';
 
-      boton.style.display = 'none';
-      boton.style.visibility = 'hidden';
-
-    }
+  }
   }

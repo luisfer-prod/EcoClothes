@@ -1,16 +1,17 @@
 
 .contenedor {
-  background-color: burlywood;
+  background-color: chartreuse;
   padding: 50px;
   display: flex;
   flex-direction: column;
   margin:1rem auto;
   max-width: 600px;
   border-radius: 15% 15% 15% 15%;
+  color: white;
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: black;
+
 }
 
 /* input.mat-input-element {
@@ -25,6 +26,19 @@
 
 body h1{
 
-  margin-left: 130px;
+  margin-left: 16%;
   margin-bottom: 60px;
 }
+
+h4{
+
+  display: flex;
+  justify-content: center;
+  text-shadow: 2px 2px 4px black;
+}
+
+h1{
+  text-shadow: 2px 2px 4px black;
+}
+
+
