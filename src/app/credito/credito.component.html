@@ -1,55 +1,61 @@
-<div class="contenedor">
-  <div class="columna">
-    <h1>Eliga la forma de pago</h1>
-    <div class="pago">
+<br><br>
+<div class="contenedorCentro">
+  <div class="contenedor">
+    <div class="columna">
+      <h1>Eliga la forma de pago</h1>
+      <div class="pago">
 
-      <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" (click)="desaparecer()" >
-        <label class="custom-control-label" for="customRadio1">Pago en efectivo</label>
-      </div>
-
-      <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" (click)="aparecer()">
-        <label class="custom-control-label" for="customRadio2">Pago con cuenta bancaria</label>
-      </div>
-
-      <form class="needs-validation" class="form" novalidate id="form">
-
-        <div class="form-row">
-
-            <label for="validationTooltip01">Fecha de vencimiento</label>
-            <input type="date" class="form-control" id="validationTooltip01"
-            placeholder="First name" [(ngModel)]="fecha" name="fecha" required>
-            <div class="valid-tooltip">
-              Looks good!
-            </div>
-
-            <label for="validationTooltip01">Código de seguridad</label>
-            <input type="text" class="form-control" id="validationTooltip01"
-            placeholder="Inserte tres números"  [(ngModel)]="codigo" name="codigo" required>
-            <div class="valid-tooltip">
-              Looks good!
-            </div>
-
-            <label for="validationTooltip02">Número de tarjeta</label>
-            <input type="text" class="form-control" id="validationTooltip02"
-            [(ngModel)]="tarjeta" name="tarjeta" required>
-            <div class="valid-tooltip">
-              Looks good!
-            </div>
-
+        <div class="custom-control custom-radio">
+          <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" (click)="desaparecer()" >
+          <label class="custom-control-label" for="customRadio1">Pago en efectivo</label>
         </div>
 
-        <button id="boton1" class="btn btn-primary" type="submit"
-        (click)="compruebaDatos()">Confirmar</button>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" (click)="aparecer()">
+          <label class="custom-control-label" for="customRadio2">Pago con cuenta bancaria</label>
+        </div>
 
-      </form>
+        <br>
+
+        <form class="needs-validation" class="form" novalidate id="form">
+
+          <div class="form-row">
+
+              <label for="validationTooltip01">Fecha de vencimiento</label>
+              <input type="date" class="form-control" id="validationTooltip01"
+              placeholder="First name" [(ngModel)]="fecha" name="fecha" required>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+
+              <label for="validationTooltip01">Código de seguridad</label>
+              <input type="text" class="form-control" id="validationTooltip01"
+              placeholder="Inserte tres números"  [(ngModel)]="codigo" name="codigo" required>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+
+              <label for="validationTooltip02">Número de tarjeta</label>
+              <input type="text" class="form-control" id="validationTooltip02"
+              [(ngModel)]="tarjeta" name="tarjeta" required>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+
+          </div>
+
+          <button id="boton1" class="btn btn-primary" type="submit"
+          (click)="compruebaDatos()">Confirmar</button>
+
+        </form>
 
 
-      <button id="boton2" class="btn btn-primary"
-      (click)="accesoDirecto()">Confirmar</button>
+        <button id="boton2" class="btn btn-primary"
+        (click)="accesoDirecto()">Confirmar</button>
 
 
+      </div>
     </div>
   </div>
 </div>
+

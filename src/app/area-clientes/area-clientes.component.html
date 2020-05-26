@@ -1,7 +1,10 @@
 
 <div class="fondo">
 
-  <h1>Administración de artículos</h1>
+  <div class="titularPrincipal">
+    <h1 class="display-1">Catálogo de productos</h1>
+  </div>
+
 
 
 
@@ -10,6 +13,9 @@
 
 
       <div class="categoria">
+
+        <h2 class="display-2">Seleccione una categoría para filtrar</h2>
+
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categoria
@@ -25,23 +31,29 @@
 
 
       <div class="contenedor" >
-        <div class="listaCompra">
-          <h1>Lista de la compra</h1>
-          <ul class="list-group" >
-            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let ped of pedidoActivo">
-              {{ped.nomProducto}}
-              <span class="badge badge-primary badge-pill">{{ped.cantidad}}</span>
-            </li>
-          </ul>
-        </div>
 
-        <div class="columna" >
-          <img src="../assets/carrito.png" alt="" class="carro">
-          <br><br>
-          <h1> <strong *ngIf="total!=null;">HAY {{total.total}} PRODUCTOS </strong> </h1>
-          <!-- <button id="actualizar" (click)="actualizarTotal()">ACTUALIZAR CESTA</button> -->
-          <button id="fin" routerLink="/credito">FINALIZAR COMPRA</button>
-        </div>
+          <div class="listaCompra">
+            <h1>Lista de la compra</h1>
+            <ul class="list-group" >
+              <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let ped of pedidoActivo">
+                {{ped.nomProducto}}
+                <span class="badge badge-primary badge-pill">{{ped.cantidad}}</span>
+              </li>
+              <h3 *ngIf="total==null;" class="carritoVacio">Actualmente no hay productos en tu carrito </h3>
+            </ul>
+
+          </div>
+
+          <div class="columna" >
+            <img src="../assets/carrito.png" alt="" class="carro">
+            <br><br>
+            <h1> <strong *ngIf="total!=null;">HAY {{total.total}} PRODUCTOS </strong> </h1>
+
+            <!-- <button id="actualizar" (click)="actualizarTotal()">ACTUALIZAR CESTA</button> -->
+            <button id="fin" routerLink="/credito">FINALIZAR COMPRA</button>
+          </div>
+          <span class="opacity" id="opacity"></span>
+
       </div>
 
 
@@ -52,7 +64,7 @@
             <div class="card-body">
               <h5 class="card-title">{{art.nombre}}</h5>
               <p class="card-text">Precio: {{art.precio}}</p>
-              <p class="card-text">Descuento: {{art.descuento}}</p>
+              <p class="card-text">Descuento: {{art.descuento}} %</p>
               <a id="carrito" class="btn btn-primary" (click)="carrito(art.codigo,art.precio)" (click)="totalPedido()">Añadir al carrito </a>
             </div>
           </div>
@@ -62,31 +74,7 @@
     </table>
 
     <ng-template #sinarticulos><p>No hay articulos.</p></ng-template>
-    <!-- <div class="formulario">
-      <p>
-        Nombre:<input type="text" [(ngModel)]="art.nombre" />
-      </p>
-      <p>
-        Imagen:<input type="text" [(ngModel)]="art.imagen" />
-      </p>
-      <p>
-        Precio:<input type="number" [(ngModel)]="art.precio" />
-      </p>
-      <p>
-        Descuento:<input type="number" [(ngModel)]="art.descuento" />
-      </p>
-      <p><button (click)="alta()">Agregar</button>
-      <button (click)="modificacion()">Modificar</button></p>
-    </div> -->
 
-      <!-- <tr scope="row" *ngFor="let art of articulos">
-        {{art.nombre}}
-        <td><img src='assets/{{art.imagen}}'></td>
-        <td>{{art.precio}}</td>
-        <td>{{art.descuento}}</td>
-        <td><button (click)="carrito(art.codigo,art.precio)">Añadir al carrito</button></td>
-         <td><button (click)="seleccionar(art.codigo)">Seleccionar</button></td>
-      </tr> -->
 </div>
 
 

@@ -3,16 +3,20 @@
 
         <h1>ACCEDA AL AREA DE CLIENTES</h1>
         <h4>Introduce tu nickname o correo</h4>
+
         <div class="caja">
           <mat-form-field >
-            <input *ngIf="cookieIdentidad!=null; else sinCookie"  matInput placeholder="Ingrese nombre o correo" [(ngModel)]="cliente.identidad" >
+            <input *ngIf="cookieIdentidad!=null; else sinCookie"  matInput  [(ngModel)]="cliente.identidad" >
+
             <ng-template #sinCookie><input matInput type="text" placeholder="Ingrese nombre o correo" [(ngModel)]="cliente.identidad"></ng-template>
           </mat-form-field>
         </div>
+
         <h4>Introduce tu contraseña</h4>
+
         <div class="caja">
           <mat-form-field>
-            <input matInput type="password" placeholder="Ingrese contraseña" [(ngModel)]="cliente.password" >
+            <input matInput type="password" [(ngModel)]="cliente.password" >
           </mat-form-field>
         </div>
 
@@ -21,3 +25,4 @@
     </div>
 </body>
 
+<!-- placeholder="Ingrese contraseña"  -->

@@ -1,8 +1,17 @@
 .contenedor{
+
+  width: 50%;
+  background-color: cyan;
   display: flex;
   justify-content: center;
-  background-color: chartreuse;
+  padding: 15px;
+  border-radius: 10px 10px 10px 10px;
+}
 
+.contenedorCentro{
+
+  display: flex;
+  justify-content: center;
 }
 
 .columna{

@@ -13,12 +13,12 @@
 .background {
 
   width: 90%;
-
+  height: 540px;
   background-color: yellow;
   padding: 10px;
   /* margin: 0px 0px 10px 0px; */
   border-radius: 5%;
-  margin-top: 2%;
+  margin-top: 1%;
   margin-left: 5%;
   padding: 50px;
 }
@@ -33,9 +33,7 @@
   justify-content: space-between;
   margin-left: -3%;
 }
- .casa{
 
- }
 .background .fila .pdf{
 
   margin-left: 70px;

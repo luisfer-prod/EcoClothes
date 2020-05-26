@@ -10,10 +10,6 @@
   color: white;
 }
 
-.mat-form-field-appearance-outline .mat-form-field-outline {
-
-}
-
 /* input.mat-input-element {
   color: green;
 } */
@@ -41,4 +37,7 @@ h1{
   text-shadow: 2px 2px 4px black;
 }
 
+.caja input {
 
+  color: black;
+}

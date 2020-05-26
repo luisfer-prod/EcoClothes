@@ -64,6 +64,18 @@ export class AreaClientesComponent implements OnInit {
   }
 
   totalPedido(){
+
+    var numFilas = this.pedidoActivo;
+    var opacity = document.getElementById('opacity');
+    var pixeles=240;
+    opacity.style.height = '240px';
+
+    for (let index = 0; index < numFilas.length; index++) {
+
+      pixeles+=20;
+      opacity.style.height = pixeles+'px';
+    }
+
     this.productosServicio.totalPedido().subscribe(result => this.total = result);
   }
 
