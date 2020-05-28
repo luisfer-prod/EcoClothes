@@ -39,16 +39,20 @@ export class ConfirmacionComponent implements OnInit {
     this.router.navigate(['']);
 
 
-    this.productosServicio.borrarPedido().subscribe(
-      datos => {
-          if (datos['resultado']=='OK') {
+    setTimeout(() =>
+    {
+      this.productosServicio.borrarPedido().subscribe(
+        datos => {
+            if (datos['resultado']=='OK') {
 
-
-          }
-      }
-    );
-
+            }
+        }
+      );
+    },
+    2000);
   }
+
+
 
   rechazar(){
     this.router.navigate(['']);

@@ -92,6 +92,10 @@ export class ProductosService {
       return this.http.get(`${this.url}recuperarPrendas.php?categoria=${categoria}`);
     }
 
+    recuperarPrendaSinBucle(categoria){
+      return this.http.get(`${this.url}recuperarPrendas.php?categoria=${categoria}`);
+    }
+
     registrarReclamacion(nivel,texto){
       return this.http.get(`${this.url}registrarReclamacion.php?nivel=${nivel}&texto=${texto}`);
     }

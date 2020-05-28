@@ -5,11 +5,7 @@
     <h1 class="display-1">Catálogo de productos</h1>
   </div>
 
-
-
-
     <table class="table table-warning table-bordered"  *ngIf="hayRegistros(); else sinarticulos" cellspacing="0">
-
 
 
       <div class="categoria">
@@ -20,6 +16,7 @@
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categoria
           </button>
+
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <button class="dropdown-item" type="button" (click)="recuperarTodos()">(Todos)</button>
             <button class="dropdown-item" type="button" (click)="recuperarPrendas('mujer')">Mujer</button>
@@ -47,7 +44,9 @@
           <div class="columna" >
             <img src="../assets/carrito.png" alt="" class="carro">
             <br><br>
-            <h1> <strong *ngIf="total!=null;">HAY {{total.total}} PRODUCTOS </strong> </h1>
+            <div *ngIf="total!=null;">
+              <h1 *ngFor="let tol of total"> <strong  >HAY {{tol.total}} PRODUCTOS </strong> </h1>
+            </div>
 
             <!-- <button id="actualizar" (click)="actualizarTotal()">ACTUALIZAR CESTA</button> -->
             <button id="fin" routerLink="/credito">FINALIZAR COMPRA</button>
@@ -62,10 +61,12 @@
           <div class="card" style="width: 18rem;" >
             <img src='assets/{{art.imagen}}' class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">{{art.nombre}}</h5>
+             <strong>
+              <h5 id="nombreProducto" class="card-title">{{art.nombre}}</h5>
+             </strong>
               <p class="card-text">Precio: {{art.precio}}</p>
               <p class="card-text">Descuento: {{art.descuento}} %</p>
-              <a id="carrito" class="btn btn-primary" (click)="carrito(art.codigo,art.precio)" (click)="totalPedido()">Añadir al carrito </a>
+              <a id="carrito" class="btn btn-primary" (click)="carrito(art.codigo,art.precio)" (click)="redimensionar()">Añadir al carrito </a>
             </div>
           </div>
         </td>
