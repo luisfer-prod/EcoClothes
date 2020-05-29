@@ -66,18 +66,26 @@
              </strong>
               <p class="card-text">Precio: {{art.precio}}</p>
               <p class="card-text">Descuento: {{art.descuento}} %</p>
+              <!-- <h1>{{art.descripcion}}</h1> -->
               <a id="carrito" class="btn btn-primary" (click)="carrito(art.codigo,art.precio)" (click)="redimensionar()">Añadir al carrito </a>
+              <button type="button" class="btn btn-success" id="info" (click)="productoPanel(art.codigo,art.nombre,art.imagen)">Mas información</button>
             </div>
           </div>
         </td>
       </tr>
 
+      <div id="panelAmpli">
+        <h1>{{this.nombrePanel}}</h1>
+        <img src="assets/{{this.imagenPanel}}" alt="">
+        <p *ngFor="let des of descripcionPanel;"> {{des.descripcion}}</p>
+        <button id="botonCerrar" type="button" class="btn btn-danger" (click)="esconderPanel()">Cerrar</button>
+      </div>
+
     </table>
+
+
 
     <ng-template #sinarticulos><p>No hay articulos.</p></ng-template>
 
 </div>
 
-
-
-<ng-template #sinpedidos><p>No hay articulos.</p></ng-template>

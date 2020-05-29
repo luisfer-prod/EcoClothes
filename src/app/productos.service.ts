@@ -16,6 +16,10 @@ export class ProductosService {
       return this.http.get(`${this.url}recuperartodos.php`);
     }
 
+    descripcion(codigo:number) {
+      return this.http.get(`${this.url}descripcion.php?codigo=${codigo}`);
+    }
+
     recuperarClientes() {
       return this.http.get(`${this.url}recuperarClientes.php`);
     }

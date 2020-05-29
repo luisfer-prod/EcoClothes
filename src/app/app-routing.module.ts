@@ -12,6 +12,7 @@ import { PrincipalComponent } from './principal/principal.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 import { CreditoComponent } from './credito/credito.component';
 import {IncidenciasComponent} from './incidencias/incidencias.component';
+import {InformacionComponent} from './informacion/informacion.component';
 
 
 const routes: Routes = [{
@@ -53,6 +54,10 @@ const routes: Routes = [{
 {
   path:'incidencias',
   component:IncidenciasComponent
+},
+{
+  path:'informacion',
+  component:InformacionComponent
 }
 ];
 

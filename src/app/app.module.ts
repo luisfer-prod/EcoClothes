@@ -30,6 +30,7 @@ import { IncidenciasComponent } from './incidencias/incidencias.component';
 import { TituloComponent } from './titulo/titulo.component';
 import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { PanelAyudaComponent } from './panel-ayuda/panel-ayuda.component';
+import { InformacionComponent } from './informacion/informacion.component';
 
 
 
@@ -51,7 +52,8 @@ import { PanelAyudaComponent } from './panel-ayuda/panel-ayuda.component';
     IncidenciasComponent,
     TituloComponent,
     AsistenciaComponent,
-    PanelAyudaComponent
+    PanelAyudaComponent,
+    InformacionComponent
   ],
   imports: [
     BrowserModule,

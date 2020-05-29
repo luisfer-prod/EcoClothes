@@ -35,6 +35,10 @@ export class AreaClientesComponent implements OnInit {
     descuento:null
   }
 
+  nombrePanel;
+  imagenPanel;
+
+  descripcionPanel = null
 
   constructor(
     private productosServicio: ProductosService,
@@ -60,11 +64,36 @@ export class AreaClientesComponent implements OnInit {
     this.redimensionar();
   }
 
+
+  productoPanel(codigo,nombre, imagen){
+
+    var panel = document.getElementById("panelAmpli");
+
+    this.productosServicio.descripcion(parseInt(codigo)).subscribe(result => this.descripcionPanel = result);
+
+    // console.log(this.descripcionPanel);
+
+    panel.style.display = "inline";
+    panel.style.visibility = "visible";
+
+    this.nombrePanel = nombre;
+    this.imagenPanel = imagen;
+
+  }
+
+  esconderPanel(){
+
+    var panel = document.getElementById("panelAmpli");
+
+    panel.style.display = "none";
+    panel.style.visibility = "hidden";
+  }
+
   totalPedido(){
 
     this.productosServicio.totalPedido().subscribe(result => this.total = result);
 
-    this.totalCarrito = this.total[0];
+    // this.totalCarrito = this.total[0];
   }
 
   redimensionar(){

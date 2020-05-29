@@ -137,9 +137,26 @@ h3{
   font-size: x-large;
 }
 
+#info{
+
+  margin-top: 10px;
+}
+
 /* .display-2{
 
   width: 1%;
 } */
 
+#panelAmpli{
+  display: none;
+  visibility: hidden;
+
+  margin-top: 40px;
+  margin-left: -45%;
+  width: 90%;
+  height: 80%;
+  top: 10px;
+  position: fixed;
+  background-color: white;
+}
 
