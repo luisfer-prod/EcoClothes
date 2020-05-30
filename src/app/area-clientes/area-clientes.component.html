@@ -77,7 +77,7 @@
       <div id="panelAmpli">
         <h1>{{this.nombrePanel}}</h1>
         <img src="assets/{{this.imagenPanel}}" alt="">
-        <p *ngFor="let des of descripcionPanel;"> {{des.descripcion}}</p>
+        <p id="parrafoPanel" *ngFor="let des of descripcionPanel;"> {{des.descripcion}}</p>
         <button id="botonCerrar" type="button" class="btn btn-danger" (click)="esconderPanel()">Cerrar</button>
       </div>
 

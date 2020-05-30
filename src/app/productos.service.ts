@@ -24,20 +24,8 @@ export class ProductosService {
       return this.http.get(`${this.url}recuperarClientes.php`);
     }
 
-    alta(articulo) {
-      return this.http.post(`${this.url}alta.php`, JSON.stringify(articulo));
-    }
-
-    baja(codigo:number) {
-      return this.http.get(`${this.url}baja.php?codigo=${codigo}`);
-    }
-
-    seleccionar(codigo:number) {
-      return this.http.get(`${this.url}seleccionar.php?codigo=${codigo}`);
-    }
-
-    modificacion(articulo) {
-      return this.http.post(`${this.url}modificacion.php`, JSON.stringify(articulo));
+    recuperarAdministradores() {
+      return this.http.get(`${this.url}recuperarAdministradores.php`);
     }
 
     registro(cliente) {
@@ -118,6 +106,24 @@ export class ProductosService {
 
     descargaPdf(){
       return this.http.get(`${this.url}descargaPdf.php`);
+    }
+
+    // TODO LO REFERENTE A LOS ADMINISTRADORES
+
+    alta(articulo) {
+      return this.http.post(`${this.url}alta.php`, JSON.stringify(articulo));
+    }
+
+    baja(codigo:number) {
+      return this.http.get(`${this.url}baja.php?codigo=${codigo}`);
+    }
+
+    seleccionar(codigo:number) {
+      return this.http.get(`${this.url}seleccionar.php?codigo=${codigo}`);
+    }
+
+    modificacion(articulo) {
+      return this.http.post(`${this.url}modificacion.php`, JSON.stringify(articulo));
     }
 }
 

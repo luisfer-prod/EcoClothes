@@ -13,6 +13,8 @@ import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 import { CreditoComponent } from './credito/credito.component';
 import {IncidenciasComponent} from './incidencias/incidencias.component';
 import {InformacionComponent} from './informacion/informacion.component';
+import {AdministradorComponent} from './administrador/administrador.component';
+import {ZonaAdminComponent} from './zona-admin/zona-admin.component';
 
 
 const routes: Routes = [{
@@ -58,6 +60,14 @@ const routes: Routes = [{
 {
   path:'informacion',
   component:InformacionComponent
+},
+{
+  path:'administrador',
+  component:AdministradorComponent
+},
+{
+  path:'zona-admin',
+  component:ZonaAdminComponent
 }
 ];
 

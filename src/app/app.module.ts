@@ -31,6 +31,8 @@ import { TituloComponent } from './titulo/titulo.component';
 import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { PanelAyudaComponent } from './panel-ayuda/panel-ayuda.component';
 import { InformacionComponent } from './informacion/informacion.component';
+import { AdministradorComponent } from './administrador/administrador.component';
+import { ZonaAdminComponent } from './zona-admin/zona-admin.component'
 
 
 
@@ -53,7 +55,9 @@ import { InformacionComponent } from './informacion/informacion.component';
     TituloComponent,
     AsistenciaComponent,
     PanelAyudaComponent,
-    InformacionComponent
+    InformacionComponent,
+    AdministradorComponent,
+    ZonaAdminComponent
   ],
   imports: [
     BrowserModule,

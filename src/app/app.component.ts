@@ -22,6 +22,19 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     // alert(this.router.getCurrentNavigation().initialUrl);
+    this.apareceNavegador();
+  }
+
+  apareceNavegador(){
+
+    var titulo = document.getElementById('tituloNavegador');
+    var navegador = document.getElementById('navegador');
+
+    titulo.style.display='inline';
+    titulo.style.visibility='visible';
+
+    navegador.style.display='inline';
+    navegador.style.visibility='visible';
 
   }
 

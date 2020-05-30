@@ -26,6 +26,7 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.apareceNavegador();
     this.quitarSticky();
 
     navigator.geolocation.getCurrentPosition(position => {
@@ -34,6 +35,19 @@ export class PrincipalComponent implements OnInit {
         lng: position.coords.longitude,
       }
     })
+  }
+
+  apareceNavegador(){
+
+    var titulo = document.getElementById('tituloNavegador');
+    var navegador = document.getElementById('navegador');
+
+    titulo.style.display='inline';
+    titulo.style.visibility='visible';
+
+    navegador.style.display='inline';
+    navegador.style.visibility='visible';
+
   }
 
   zoomIn() {

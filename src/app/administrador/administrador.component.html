@@ -1,0 +1,27 @@
+
+<body>
+  <div class="contenedor">
+
+      <h1>ZONA DE ADMINISTRADORES</h1>
+      <h4>Introduce tu nombre de administrador</h4>
+
+      <div class="caja">
+        <mat-form-field >
+          <input matInput  [(ngModel)]="this.administrador.nombre" >
+
+          <ng-template #sinCookie><input matInput type="text" placeholder="Ingrese nombre" [(ngModel)]="administrador.nombre"></ng-template>
+        </mat-form-field>
+      </div>
+
+      <h4>Introduce tu contraseña</h4>
+
+      <div class="caja">
+        <mat-form-field>
+          <input matInput type="password" [(ngModel)]="this.administrador.password2" >
+        </mat-form-field>
+      </div>
+      <br>
+      <button type="button" class="btn btn-light" id="botonAcceso" (click)="acceso()"> Acceder</button>
+
+  </div>
+</body>

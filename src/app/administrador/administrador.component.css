@@ -1,0 +1,47 @@
+
+.contenedor {
+  background-color: blueviolet;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  margin:1rem auto;
+  max-width: 600px;
+  border-radius: 15% 15% 15% 15%;
+  color: white;
+}
+
+/* input.mat-input-element {
+  color: green;
+} */
+
+.caja{
+  border-style: solid;
+  border-color: black;
+  margin: 5px;
+}
+
+body h1{
+
+  margin-left: 16%;
+  margin-bottom: 60px;
+}
+
+h4{
+
+  display: flex;
+  justify-content: center;
+  text-shadow: 2px 2px 4px black;
+}
+
+h1{
+  text-shadow: 2px 2px 4px black;
+}
+
+.caja input {
+
+  color: white;
+}
+
+button{
+  margin-top: 20px;
+}
