@@ -13,7 +13,7 @@ export class ZonaAdminComponent implements OnInit {
   constructor(private articulosServicio: ProductosService) {}
 
   ngOnInit(): void {
-    this.recuperarTodos();
+    this.recuperarDescripcion();
     this.ocultarNavegador();
   }
 
@@ -30,33 +30,55 @@ export class ZonaAdminComponent implements OnInit {
 
   }
 
+  productos=null;
+
   articulos=null;
 
   art={
     codigo:null,
+    nombre:null,
     descripcion:null,
-    precio:null
+    categoria:null,
+    imagen:null,
+    precio:null,
+    descuento:null
   }
 
+  recuperarDescripcion(){
+    this.articulosServicio.recuperarDescripcion().subscribe(result => this.productos = result);
+  }
 
-  recuperarTodos() {
+  recuperarTodos(){
     this.articulosServicio.recuperarTodos().subscribe(result => this.articulos = result);
   }
+
+
+
 
   alta() {
     this.articulosServicio.alta(this.art).subscribe(datos => {
       if (datos['resultado']=='OK') {
         alert(datos['mensaje']);
-        this.recuperarTodos();
+        this.recuperarDescripcion();
       }
     });
   }
 
   baja(codigo) {
-    this.articulosServicio.baja(codigo).subscribe(datos => {
+    this.articulosServicio.baja(parseInt(codigo)).subscribe(datos => {
       if (datos['resultado']=='OK') {
         alert(datos['mensaje']);
-        this.recuperarTodos();
+        this.recuperarDescripcion();
+        }
+
+    });
+  }
+
+  bajaCategoria(codigo) {
+    this.articulosServicio.bajaCategoria(parseInt(codigo)).subscribe(datos => {
+      if (datos['resultado']=='OK') {
+        alert(datos['mensaje']);
+        this.recuperarDescripcion();
       }
     });
   }
@@ -65,7 +87,7 @@ export class ZonaAdminComponent implements OnInit {
     this.articulosServicio.modificacion(this.art).subscribe(datos => {
       if (datos['resultado']=='OK') {
         alert(datos['mensaje']);
-        this.recuperarTodos();
+        this.recuperarDescripcion();
       }
     });
   }

@@ -16,6 +16,10 @@ export class ProductosService {
       return this.http.get(`${this.url}recuperartodos.php`);
     }
 
+    recuperarDescripcion() {
+      return this.http.get(`${this.url}recuperartodosDescripcion.php`);
+    }
+
     descripcion(codigo:number) {
       return this.http.get(`${this.url}descripcion.php?codigo=${codigo}`);
     }
@@ -116,6 +120,10 @@ export class ProductosService {
 
     baja(codigo:number) {
       return this.http.get(`${this.url}baja.php?codigo=${codigo}`);
+    }
+
+    bajaCategoria(codigo:number) {
+      return this.http.get(`${this.url}bajaCategoria.php?codigo=${codigo}`);
     }
 
     seleccionar(codigo:number) {
