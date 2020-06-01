@@ -13,18 +13,22 @@
       </div>
 
 
-        <table border="1" *ngIf="hayRegistros(); else sinarticulos">
-          <tr>
-            <td>Nombre</td><td>Descripcion</td><td>Imagen</td><td>Precio</td><td>Descuento</td><td>Borrar</td><td>Seleccionar</td>
-          </tr>
+        <table class="table table-bordered table-dark " border="1" *ngIf="hayRegistros(); else sinarticulos" id="tablaProductos">
+          <thead class="thead-light">
+            <tr>
+              <th>Nombre</th><th>Descripcion</th><th>Imagen</th><th>Precio</th><th>Descuento</th><th>Categoria</th><th>Borrar</th><th>Seleccionar</th>
+            </tr>
+          </thead>
+
           <tr *ngFor="let art of productos">
             <td>{{art.nombre}}</td>
-            <td> {{art.descripcion}}</td>
+            <td>{{art.descripcion}}</td>
             <td>{{art.imagen}}</td>
-            <td>{{art.precio}}</td>
-            <td>{{art.descuento}}</td>
-            <td><button (click)="baja(art.codigo)">Borrar</button></td>
-            <td><button (click)="seleccionar(art.codigo)">Seleccionar</button></td>
+            <td >{{art.precio}}</td>
+            <td >{{art.descuento}}%</td>
+            <td>{{art.categoria}}</td>
+            <td><button  type="button" class="btn btn-danger" (click)="baja(art.codigo)">Borrar</button></td>
+            <td><button type="button" class="btn btn-warning" (click)="seleccionar(art.codigo)">Seleccionar</button></td>
           </tr>
         </table>
 
@@ -68,17 +72,36 @@
                   &nbsp;&nbsp;
                 </p>
 
+
+
               </td>
 
               <td id="celdaDos">
                 <p>
                   Categoria:<input type="text" [(ngModel)]="art.categoria" />
                 </p>
+
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <!-- <form class="formulario" action="https://localhost/eco_clothes/alta.php" method="post" enctype="multipart/form-data"> -->
+                <td>
+                 <form (ngSubmit)="upload()">
+                   <input type="text" [(ngModel)]="archivo.nombre" name="file">
+                  Imagen: <input type="file" accept="imagen/*" name="fileSubir" id="imagen" (change)="subirImagen($event)">
+                  <button>Subir imagen</button>
+                 </form>
+
+
+                </td>
                 &nbsp;&nbsp;
-                <button (click)="alta()">Agregar</button>
+                <button  (click)="alta()">Agregar</button>
                 &nbsp; &nbsp;
                 <button (click)="modificacion()">Modificar</button>
-              </td>
+              <!-- </form> -->
             </tr>
 
           </table>

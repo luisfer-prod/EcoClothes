@@ -12,6 +12,10 @@ export class ProductosService {
 
     constructor(private http: HttpClient) { }
 
+    uploadFile(archivo){
+      return this.http.post(`${this.url}subir.php`,JSON.stringify(archivo));
+    }
+
     recuperarTodos() {
       return this.http.get(`${this.url}recuperartodos.php`);
     }

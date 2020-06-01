@@ -34,6 +34,7 @@
             <ul class="list-group" >
               <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let ped of pedidoActivo">
                 {{ped.nomProducto}}
+                <img src="../assets/menosTres.png" id="menos">
                 <span class="badge badge-primary badge-pill">{{ped.cantidad}}</span>
               </li>
               <h3 *ngIf="total==null;" class="carritoVacio">Actualmente no hay productos en tu carrito </h3>
