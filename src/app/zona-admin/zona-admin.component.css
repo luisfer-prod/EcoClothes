@@ -2,7 +2,7 @@
 
   z-index: 1000;
   width: 100%;
-  height: 200%;
+  height: 240%;
   margin-top: -5%;
   background-color: white;
 }
@@ -53,4 +53,10 @@ H1{
 #tablaProductos td {
 
   border: white 3px solid;
+}
+
+#formularioimagen{
+
+  display: flex;
+  flex-direction: column;
 }

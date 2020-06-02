@@ -35,6 +35,13 @@ export class AreaClientesComponent implements OnInit {
     descuento:null
   }
 
+  borrar = {
+    codigoPedido:null,
+    total:null,
+    codigoProducto:null,
+    cantidad:null
+  }
+
   nombrePanel;
   imagenPanel;
 
@@ -144,7 +151,6 @@ export class AreaClientesComponent implements OnInit {
    recuperarPedidoActivo(){
     this.productosServicio.recuperarPedidoActivo().subscribe(result => this.pedidoActivo = result);
 
-
    }
 
 
@@ -157,6 +163,8 @@ export class AreaClientesComponent implements OnInit {
     this.recuperarPedidoActivo();
     this.totalPedido();
   }
+
+  // PARA SUMAR Y RESTAR UNIDADES AL CARRITO
 
   anadir(codigoArticulo,precio){
 
@@ -226,6 +234,54 @@ export class AreaClientesComponent implements OnInit {
     this.recuperarPedidoActivo();
     this.totalPedido();
   }
+
+
+  restar(codigoPedido,total,codigoProducto,cantidad){
+
+    this.recuperarPedidos();
+    this.recuperarPedidoActivo();
+    this.totalPedido();
+
+      this.borrar.codigoPedido = codigoPedido;
+      this.borrar.total = total;
+      this.borrar.codigoProducto = codigoProducto;
+      this.borrar.cantidad = cantidad;
+
+      this.productosServicio.restar(this.borrar).subscribe(datos => {
+        if (datos['resultado']=='OK') {
+          alert(datos['mensaje']);
+          // this.recuperarPedidos();
+          // this.recuperarPedidoActivo();
+          // this.totalPedido();
+        }
+      });
+
+      this.recuperarPedidos();
+    this.recuperarPedidoActivo();
+    this.totalPedido();
+
+      if (this.borrar.total=="1" || this.borrar.total=="0") {
+        this.pedidoActivo = null;
+        this.total[0].total = "0";
+        this.borrar.total = "0";
+        this.total = null;
+      }
+
+    if (this.pedidoActivo==null) {
+
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/areaCliente']);
+        });
+    }
+
+    //  if (parseInt(this.total[0].total)==0) {
+    //   this.router.navigate(['/area-clientes']);
+    //     }
+    // } else {
+    //   this.router.navigate(['/area-clientes']);
+    // }
+  }
+
 
 
 

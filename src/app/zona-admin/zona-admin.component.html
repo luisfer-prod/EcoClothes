@@ -89,15 +89,19 @@
             <tr>
               <!-- <form class="formulario" action="https://localhost/eco_clothes/alta.php" method="post" enctype="multipart/form-data"> -->
                 <td>
-                 <form (ngSubmit)="upload()">
-                   <input type="text" [(ngModel)]="archivo.nombre" name="file">
-                  Imagen: <input type="file" accept="imagen/*" name="fileSubir" id="imagen" (change)="subirImagen($event)">
-                  <button>Subir imagen</button>
-                 </form>
-
-
+                  <div >
+                    <form (ngSubmit)="upload()" id="formularioimagen">
+                      Nombre de la imagen:
+                      <input type="text" [(ngModel)]="archivo.nombre" name="file">
+                      <br><br>
+                      <input type="file" accept="imagen/*" name="fileSubir" id="imagen" (change)="subirImagen($event)">
+                      <br>
+                      <button>Subir imagen</button>
+                    </form>
+                  </div>
                 </td>
-                &nbsp;&nbsp;
+                <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button  (click)="alta()">Agregar</button>
                 &nbsp; &nbsp;
                 <button (click)="modificacion()">Modificar</button>
