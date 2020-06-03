@@ -193,13 +193,12 @@ export class AreaClientesComponent implements OnInit {
       if (datos['resultado']=='OK') {
       }
 
-        // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        //   this.router.navigate(['/areaCliente']);
-        // });
+      this.recuperarPedidos();
+      this.recuperarPedidoActivo();
+      this.totalPedido();
+
       }
     );
-
-    // this.recuperarTodos();
 
     if (this.switch) {
       this.recuperarPrendas(this.categoria);
@@ -213,13 +212,15 @@ export class AreaClientesComponent implements OnInit {
   }
 
   nuevoPedido(codigoCli,precio,codigoArticulo){
+
     this.productosServicio.nuevoPedido(codigoCli,precio,codigoArticulo).subscribe(datos => {
       if (datos['resultado']=='OK') {
+
+        this.recuperarPedidos();
+        this.recuperarPedidoActivo();
+        this.totalPedido();
       }
 
-        // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        //   this.router.navigate(['/areaCliente']);
-        // })
     });
 
     // this.recuperarTodos();
@@ -250,15 +251,15 @@ export class AreaClientesComponent implements OnInit {
       this.productosServicio.restar(this.borrar).subscribe(datos => {
         if (datos['resultado']=='OK') {
           alert(datos['mensaje']);
-          // this.recuperarPedidos();
-          // this.recuperarPedidoActivo();
-          // this.totalPedido();
+          this.recuperarPedidos();
+          this.recuperarPedidoActivo();
+          this.totalPedido();
         }
       });
 
       this.recuperarPedidos();
-    this.recuperarPedidoActivo();
-    this.totalPedido();
+      this.recuperarPedidoActivo();
+      this.totalPedido();
 
       if (this.borrar.total=="1" || this.borrar.total=="0") {
         this.pedidoActivo = null;
@@ -273,13 +274,6 @@ export class AreaClientesComponent implements OnInit {
           this.router.navigate(['/areaCliente']);
         });
     }
-
-    //  if (parseInt(this.total[0].total)==0) {
-    //   this.router.navigate(['/area-clientes']);
-    //     }
-    // } else {
-    //   this.router.navigate(['/area-clientes']);
-    // }
   }
 
 
