@@ -85,6 +85,10 @@ export class FormularioComponent implements OnInit {
             }
         });
 
+        if (1==1) {
+
+        }
+
         if (!this.flag) {
             swal("El usuario introducido no existe. Revise si los datos son erroneos");
         } else{

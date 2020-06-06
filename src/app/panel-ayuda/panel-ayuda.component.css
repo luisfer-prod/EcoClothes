@@ -10,15 +10,17 @@
 } */
 
 
+
+
 .background {
 
   width: 90%;
-  height: 540px;
+  height: 600px;
   background-color: yellow;
   padding: 10px;
   /* margin: 0px 0px 10px 0px; */
   border-radius: 5%;
-  margin-top: 1%;
+  top: -5%;
   margin-left: 5%;
   padding: 50px;
 }
@@ -41,6 +43,26 @@
 
 a{
   color: aliceblue;
+}
+
+
+@media (max-width: 1080px) {
+  .background {
+    height: 600px;
+  }
+  p{
+    font-size: 12px;
+  }
+  .text{
+    margin-top: -20px;
+  }
+
+  .background .fila{
+    margin-left: -12%;
+  }
+  .background .fila .pdf{
+    margin-left: 12%;
+  }
 }
 
 

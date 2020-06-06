@@ -6,18 +6,35 @@
 
 .contenedor{
 
-  top: 10px;
+  top: 90%;
   position: fixed;
   z-index: 1;
   margin-left: 87%;
-  margin-top: 40%;
+  /* margin-top: 40%; */
 }
+
+@media (max-width: 1145px) {
+  .contenedor {
+
+    top: 87%;
+    margin-left: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contenedor {
+
+    margin-left: 68%;
+  }
+}
+
+
 
 .panel{
 
-  top: 1px;
   position: fixed;
   z-index: 200;
+  top: 2%;
 }
 
 .panel{
@@ -30,4 +47,17 @@
 
   width: 100%;
 }
+/*
+@media (max-width: 771px) {
+  body{
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 90%;
+  }
+} */
+
+
+
+
+
 

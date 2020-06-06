@@ -14,3 +14,10 @@ body {
     background-size: cover;
 
   }
+
+
+  @media (max-width: 758px) {
+    body{
+      width: 758px;
+    }
+  }

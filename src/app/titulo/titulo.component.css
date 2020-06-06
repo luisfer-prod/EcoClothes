@@ -28,3 +28,10 @@
   margin-bottom: 0.1px;
 }
 
+@media (max-width: 750px) {
+  .contenedor {
+    margin-left: 21%;
+    width: 60%;
+  }
+}
+
