@@ -1,5 +1,9 @@
 # Proyecto
 
+"Eco Clothes" es un proyecto web que consiste en una tienda de ropa ecológica y de segunda mano. Para desplegar esta aplicación y probarla, sigues los pasos indicados abajo de este párrafo.
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
 
 ## Development server
